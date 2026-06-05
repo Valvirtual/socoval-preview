@@ -87,6 +87,9 @@
   .servicio-icon svg { width: 26px; height: 26px; stroke: var(--blue); }
   .servicio-card h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
   .servicio-card p  { font-size: 14px; color: var(--gray-text); line-height: 1.6; }
+  .card-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .card-bullets li { font-size: 14px; color: var(--gray-text); line-height: 1.4; padding-left: 16px; position: relative; }
+  .card-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
 
   /* ─── AUTORIDAD (Alberto) ─── */
   .autoridad {
@@ -244,7 +247,12 @@
         <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
       </div>
       <h3>Proyectos de ingeniería</h3>
-      <p>Diseño e instalación de salas de máquinas completas: sistemas de filtración, bombas de circulación, dosificadores automáticos de pH y cloro, y equipos de control del agua para instalaciones acuáticas deportivas.</p>
+      <ul class="card-bullets">
+        <li>Diseño de sala de máquinas</li>
+        <li>Sistemas de filtración y bombas</li>
+        <li>Dosificadores automáticos de pH y cloro</li>
+        <li>Ingeniería hidráulica y eléctrica</li>
+      </ul>
     </div>
 
     <div class="servicio-card">
@@ -252,7 +260,12 @@
         <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
       </div>
       <h3>Instalación y puesta en marcha</h3>
-      <p>Construcción e instalación de piscinas para instalaciones deportivas, hoteles y comunidades — desde la excavación hasta la puesta a punto técnica completa y validación normativa.</p>
+      <ul class="card-bullets">
+        <li>Ejecución técnica completa</li>
+        <li>Pruebas de funcionamiento</li>
+        <li>Validación normativa previa a apertura</li>
+        <li>Entrega con documentación técnica</li>
+      </ul>
     </div>
 
     <div class="servicio-card">
@@ -260,7 +273,12 @@
         <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
       </div>
       <h3>Mantenimiento y soporte técnico</h3>
-      <p>Revisión periódica de equipos, bombas, filtros y dosificadores. Diagnóstico y reparación rápida de averías para minimizar el tiempo de parada. Contratos anuales para comunidades, hoteles e instalaciones deportivas.</p>
+      <ul class="card-bullets">
+        <li>Revisión periódica de equipos y filtros</li>
+        <li>Diagnóstico y reparación de averías</li>
+        <li>Asistencia técnica prioritaria</li>
+        <li>Contratos anuales de mantenimiento</li>
+      </ul>
     </div>
 
     <div class="servicio-card">
@@ -268,7 +286,12 @@
         <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22V12M12 12C12 7 7 4 2 4M12 12C12 7 17 4 22 4"/><path d="M2 12c3-2 6-2 10 0s7 2 10 0"/></svg>
       </div>
       <h3>Tratamiento del agua</h3>
-      <p>Análisis y control del agua según normativa vigente de Sanidad. Dosificación automática de reactivos, equilibrio químico y cumplimiento de los parámetros exigidos por la legislación española.</p>
+      <ul class="card-bullets">
+        <li>Análisis según normativa sanitaria</li>
+        <li>Dosificación automática de reactivos</li>
+        <li>Equilibrio químico certificado</li>
+        <li>Cumplimiento legislación española</li>
+      </ul>
     </div>
 
   </div>
