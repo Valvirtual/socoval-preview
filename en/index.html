@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Socoval Pools — Pool Maintenance & Installation</title>
-<meta name="description" content="Socoval Pools offers professional pool maintenance, installation and cleaning services. Team of 6 specialist technicians. Request a free quote.">
+<title>Socoval — Aquatic Installations Engineering & Maintenance</title>
+<meta name="description" content="Socoval: engineering, installation and maintenance of sports aquatic facilities. Machine room, filtration, automatic dosing and water treatment for communities, hotels and sports facilities.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -26,127 +26,45 @@
 
   /* ─── HEADER ─── */
   header {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: var(--navy);
-    padding: 0 6%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 70px;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--navy); padding: 0 6%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px; box-shadow: 0 2px 20px rgba(0,0,0,0.3);
   }
-
   .logo-header svg { height: 38px; width: auto; }
-
   nav { display: flex; align-items: center; gap: 32px; }
-
-  nav a {
-    color: rgba(255,255,255,0.8);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    transition: color 0.2s;
-  }
+  nav a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.3px; transition: color 0.2s; }
   nav a:hover { color: var(--white); }
-
-  .btn-nav {
-    background: var(--red);
-    color: white !important;
-    padding: 10px 22px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: background 0.2s !important;
-  }
+  .btn-nav { background: var(--red); color: white !important; padding: 10px 22px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: background 0.2s !important; }
   .btn-nav:hover { background: #A93226 !important; }
 
   /* ─── HERO ─── */
   .hero {
-    padding-top: 70px;
-    min-height: 100vh;
+    padding-top: 70px; min-height: 100vh;
     background:
-      linear-gradient(to right, rgba(7,30,61,0.92) 55%, rgba(7,30,61,0.5)),
+      linear-gradient(to right, rgba(7,30,61,0.82) 45%, rgba(7,30,61,0.15)),
       url('https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    padding-left: 8%;
-    padding-right: 8%;
+    display: flex; align-items: center; padding-left: 8%; padding-right: 8%;
   }
-
-  .hero-content { max-width: 600px; }
-
+  .hero-content { max-width: 620px; }
   .hero-badge {
     display: inline-block;
-    background: rgba(91,179,232,0.15);
-    border: 1px solid rgba(91,179,232,0.4);
-    color: var(--blue-light);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 20px;
-    margin-bottom: 24px;
+    background: rgba(91,179,232,0.15); border: 1px solid rgba(91,179,232,0.4);
+    color: var(--blue-light); font-size: 12px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px;
+    border-radius: 20px; margin-bottom: 24px;
   }
-
-  .hero h1 {
-    font-size: clamp(36px, 5vw, 58px);
-    font-weight: 800;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 20px;
-  }
+  .hero h1 { font-size: clamp(36px, 5vw, 58px); font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
   .hero h1 span { color: var(--blue-light); }
-
-  .hero p {
-    font-size: 18px;
-    color: rgba(255,255,255,0.75);
-    line-height: 1.7;
-    margin-bottom: 36px;
-    max-width: 500px;
-  }
-
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 36px; max-width: 520px; }
   .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-
-  .btn-primary {
-    background: var(--red);
-    color: white;
-    padding: 16px 32px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 15px;
-    text-decoration: none;
-    transition: background 0.2s, transform 0.15s;
-    display: inline-block;
-  }
+  .btn-primary { background: var(--red); color: white; padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block; }
   .btn-primary:hover { background: #A93226; transform: translateY(-1px); }
-
-  .btn-secondary {
-    background: transparent;
-    color: white;
-    padding: 16px 32px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 15px;
-    text-decoration: none;
-    border: 2px solid rgba(255,255,255,0.4);
-    transition: border-color 0.2s, transform 0.15s;
-    display: inline-block;
-  }
+  .btn-secondary { background: transparent; color: white; padding: 16px 32px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: border-color 0.2s, transform 0.15s; display: inline-block; }
   .btn-secondary:hover { border-color: white; transform: translateY(-1px); }
 
   /* Stats bar */
-  .stats-bar {
-    background: var(--navy-dark);
-    padding: 28px 8%;
-    display: flex;
-    gap: 0;
-    border-bottom: 3px solid var(--red);
-  }
-
+  .stats-bar { background: var(--navy-dark); padding: 28px 8%; display: flex; gap: 0; border-bottom: 3px solid var(--red); }
   .stat { flex: 1; text-align: center; padding: 0 20px; border-right: 1px solid rgba(255,255,255,0.1); }
   .stat:last-child { border-right: none; }
   .stat-number { font-size: 36px; font-weight: 800; color: var(--blue-light); line-height: 1; margin-bottom: 6px; }
@@ -154,171 +72,113 @@
 
   /* ─── SECTIONS ─── */
   section { padding: 90px 8%; }
-
-  .section-label {
-    font-size: 12px; font-weight: 700; letter-spacing: 3px;
-    text-transform: uppercase; color: var(--blue); margin-bottom: 12px;
-  }
-  .section-title {
-    font-size: clamp(28px, 3.5vw, 42px); font-weight: 800;
-    color: var(--navy); line-height: 1.2; margin-bottom: 16px;
-  }
-  .section-sub {
-    font-size: 17px; color: var(--gray-text); line-height: 1.7;
-    max-width: 560px; margin-bottom: 56px;
-  }
+  .section-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+  .section-title { font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+  .section-sub   { font-size: 17px; color: var(--gray-text); line-height: 1.7; max-width: 560px; margin-bottom: 56px; }
 
   /* ─── SERVICES ─── */
   .servicios { background: var(--gray-bg); }
-
-  .servicios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-  }
-
-  .servicio-card {
-    background: white; border-radius: 16px; padding: 36px 30px;
-    border: 1px solid rgba(0,0,0,0.07);
-    transition: transform 0.2s, box-shadow 0.2s;
-    position: relative; overflow: hidden;
-  }
-  .servicio-card::before {
-    content: ''; position: absolute; top: 0; left: 0;
-    width: 4px; height: 100%; background: var(--blue);
-    border-radius: 4px 0 0 4px; transition: width 0.2s;
-  }
+  .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .servicio-card { background: white; border-radius: 16px; padding: 36px 30px; border: 1px solid rgba(0,0,0,0.07); transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
+  .servicio-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--blue); border-radius: 4px 0 0 4px; transition: width 0.2s; }
   .servicio-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(11,47,94,0.12); }
   .servicio-card:hover::before { width: 6px; }
-
-  .servicio-icon {
-    width: 52px; height: 52px; background: rgba(27,111,200,0.1);
-    border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
-  }
+  .servicio-icon { width: 52px; height: 52px; background: rgba(27,111,200,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
   .servicio-icon svg { width: 26px; height: 26px; stroke: var(--blue); }
-  .servicio-card h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-  .servicio-card p  { font-size: 14px; color: var(--gray-text); line-height: 1.6; }
+  .servicio-card h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
+  .card-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .card-bullets li { font-size: 14px; color: var(--gray-text); line-height: 1.4; padding-left: 16px; position: relative; }
+  .card-bullets li::before { content: ''; position: absolute; left: 0; top: 6px; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+
+  /* ─── AUTHORITY (Alberto) ─── */
+  .autoridad {
+    background: var(--navy-dark);
+    padding: 90px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .autoridad-text .section-label { color: var(--blue-light); }
+  .autoridad-text .section-title { color: white; margin-bottom: 24px; }
+  .autoridad-text .section-sub   { color: rgba(255,255,255,0.65); margin-bottom: 36px; max-width: 100%; }
+  .credencial {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; padding: 24px; margin-bottom: 16px;
+  }
+  .credencial-icon { width: 44px; height: 44px; background: var(--blue); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .credencial-icon svg { width: 22px; height: 22px; stroke: white; stroke-width: 2; fill: none; }
+  .credencial-text strong { display: block; font-size: 14px; font-weight: 700; color: white; margin-bottom: 4px; }
+  .credencial-text span  { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+  .autoridad-quote {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 4px solid var(--blue-light);
+    border-radius: 0 16px 16px 0;
+    padding: 36px 40px;
+  }
+  .autoridad-quote blockquote { font-size: 22px; font-weight: 600; color: white; line-height: 1.5; font-style: italic; margin-bottom: 20px; }
+  .autoridad-quote cite { font-size: 14px; color: var(--blue-light); font-style: normal; font-weight: 700; letter-spacing: 0.5px; }
+  .autoridad-quote cite span { display: block; font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 400; margin-top: 4px; letter-spacing: 0; }
 
   /* ─── WHY US ─── */
   .porque { background: var(--navy); color: white; }
   .porque .section-title { color: white; }
   .porque .section-label { color: var(--blue-light); }
   .porque .section-sub   { color: rgba(255,255,255,0.65); }
-
-  .porque-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 32px;
-  }
-
-  .porque-item {
-    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 16px; padding: 32px 26px; text-align: center; transition: background 0.2s;
-  }
+  .porque-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
+  .porque-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px 26px; text-align: center; transition: background 0.2s; }
   .porque-item:hover { background: rgba(255,255,255,0.1); }
   .porque-num  { font-size: 42px; font-weight: 800; color: var(--blue-light); margin-bottom: 10px; line-height: 1; }
   .porque-item h3 { font-size: 16px; font-weight: 700; color: white; margin-bottom: 10px; }
   .porque-item p  { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6; }
 
-  /* ─── HOW IT WORKS ─── */
+  /* ─── HOW WE WORK ─── */
   .como { background: white; }
-
-  .pasos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 0; position: relative;
-  }
-
+  .pasos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; position: relative; }
   .paso { text-align: center; padding: 0 30px; position: relative; }
-  .paso:not(:last-child)::after {
-    content: '→'; position: absolute; right: -10px; top: 28px;
-    font-size: 24px; color: var(--blue-light);
-  }
-
-  .paso-num {
-    width: 64px; height: 64px; background: var(--navy); color: white;
-    font-size: 24px; font-weight: 800; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;
-  }
+  .paso:not(:last-child)::after { content: '→'; position: absolute; right: -10px; top: 28px; font-size: 24px; color: var(--blue-light); }
+  .paso-num { width: 64px; height: 64px; background: var(--navy); color: white; font-size: 24px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
   .paso h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
   .paso p  { font-size: 14px; color: var(--gray-text); line-height: 1.6; }
 
   /* ─── GALLERY ─── */
   .galeria { background: var(--gray-bg); }
-
-  .galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 28px;
-  }
-
+  .galeria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
   .galeria-item { border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.1); }
   .galeria-par  { display: grid; grid-template-columns: 1fr 1fr; }
-
-  .galeria-foto {
-    aspect-ratio: 4/3; position: relative; overflow: hidden;
-  }
-  .galeria-foto img {
-    width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s;
-  }
+  .galeria-foto { aspect-ratio: 4/3; position: relative; overflow: hidden; }
+  .galeria-foto img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
   .galeria-item:hover .galeria-foto img { transform: scale(1.04); }
-
-  .galeria-etiqueta {
-    position: absolute; top: 12px; left: 12px;
-    padding: 5px 12px; border-radius: 20px;
-    font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-  }
+  .galeria-etiqueta { position: absolute; top: 12px; left: 12px; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
   .etiqueta-antes   { background: rgba(192,57,43,0.85);  color: white; }
   .etiqueta-despues { background: rgba(27,111,200,0.85); color: white; }
-
-  .galeria-desc {
-    background: white; padding: 18px 22px;
-    font-size: 14px; font-weight: 600; color: var(--navy); border-top: 3px solid var(--blue);
-  }
+  .galeria-desc { background: white; padding: 18px 22px; font-size: 14px; font-weight: 600; color: var(--navy); border-top: 3px solid var(--blue); }
 
   /* ─── CTA ─── */
-  .cta-section {
-    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #0E4080 100%);
-    text-align: center; padding: 100px 8%; position: relative; overflow: hidden;
-  }
-  .cta-section::before {
-    content: ''; position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%);
-    width: 600px; height: 120px; background: rgba(91,179,232,0.08);
-    border-radius: 50%; filter: blur(40px);
-  }
+  .cta-section { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #0E4080 100%); text-align: center; padding: 100px 8%; position: relative; overflow: hidden; }
+  .cta-section::before { content: ''; position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%); width: 600px; height: 120px; background: rgba(91,179,232,0.08); border-radius: 50%; filter: blur(40px); }
   .cta-section h2 { font-size: clamp(28px, 4vw, 46px); font-weight: 800; color: white; margin-bottom: 16px; position: relative; }
   .cta-section p  { font-size: 18px; color: rgba(255,255,255,0.7); margin-bottom: 40px; position: relative; }
   .cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; position: relative; }
 
   /* ─── FOOTER ─── */
-  footer {
-    background: var(--navy-dark); padding: 50px 8% 30px; border-top: 3px solid var(--red);
-  }
-
-  .footer-top {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    gap: 40px; flex-wrap: wrap; margin-bottom: 40px;
-  }
+  footer { background: var(--navy-dark); padding: 50px 8% 30px; border-top: 3px solid var(--red); }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
   .footer-logo svg { height: 32px; width: auto; margin-bottom: 14px; }
   .footer-tagline  { font-size: 13px; color: rgba(255,255,255,0.5); max-width: 220px; line-height: 1.6; }
-
-  .footer-col h4 {
-    font-size: 13px; font-weight: 700; letter-spacing: 1.5px;
-    text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px;
-  }
-  .footer-col a, .footer-col p {
-    display: block; font-size: 14px; color: rgba(255,255,255,0.7);
-    text-decoration: none; margin-bottom: 8px; transition: color 0.2s;
-  }
+  .footer-col h4 { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+  .footer-col a, .footer-col p { display: block; font-size: 14px; color: rgba(255,255,255,0.7); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
   .footer-col a:hover { color: var(--blue-light); }
-
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px;
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
-  }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
   .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.35); }
 
   /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .autoridad { grid-template-columns: 1fr; gap: 40px; }
+  }
   @media (max-width: 768px) {
     nav a:not(.btn-nav) { display: none; }
     .stats-bar { flex-wrap: wrap; gap: 20px; }
@@ -343,20 +203,20 @@
   </a>
   <nav>
     <a href="#services">Services</a>
-    <a href="#how">How it works</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact" class="btn-nav">Free quote</a>
+    <a href="#alberto">Expertise</a>
+    <a href="#how">How we work</a>
+    <a href="#contact" class="btn-nav">Request a project</a>
   </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <span class="hero-badge">Pool specialist company</span>
-    <h1>Your pool always<br><span>ready</span> and worry-free</h1>
-    <p>Specialist technicians in pool maintenance, installation and cleaning for private clients, residential communities, hotels and businesses.</p>
+    <span class="hero-badge">Aquatic installations engineering</span>
+    <h1>Engineering, installation and maintenance<br><span>at a professional level</span></h1>
+    <p>Specialists in aquatic installation projects for communities, hotels, sports facilities and management companies. Machine room, filtration, automatic dosing and technical maintenance.</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Request a free quote</a>
+      <a href="#contact" class="btn-primary">Request a project</a>
       <a href="#services" class="btn-secondary">View services</a>
     </div>
   </div>
@@ -364,73 +224,135 @@
 
 <!-- STATS -->
 <div class="stats-bar">
-  <div class="stat"><div class="stat-number">+500</div><div class="stat-label">Pools maintained</div></div>
-  <div class="stat"><div class="stat-number">6</div><div class="stat-label">Specialist technicians</div></div>
   <div class="stat"><div class="stat-number">+30</div><div class="stat-label">Years of experience</div></div>
-  <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Satisfaction guarantee</div></div>
+  <div class="stat"><div class="stat-number">6</div><div class="stat-label">Specialist technicians</div></div>
+  <div class="stat"><div class="stat-number">+100</div><div class="stat-label">Projects completed</div></div>
+  <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Execution guarantee</div></div>
 </div>
 
 <!-- SERVICES -->
 <section class="servicios" id="services">
   <div class="section-label">What we do</div>
-  <h2 class="section-title">Complete services<br>for your pool</h2>
-  <p class="section-sub">From installation to daily maintenance — we cover everything so you don't have to worry about a thing.</p>
+  <h2 class="section-title">Complete technical solutions<br>for aquatic installations</h2>
+  <p class="section-sub">From engineering design to ongoing maintenance — we manage the full technical installation so you only focus on your users.</p>
   <div class="servicios-grid">
+
     <div class="servicio-card">
-      <div class="servicio-icon"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M3 12s2-4 9-4 9 4 9 4-2 4-9 4-9-4-9-4z"/><circle cx="12" cy="12" r="2"/></svg></div>
-      <h3>Regular maintenance</h3>
-      <p>Periodic inspection of your pool — filters, pump, pH and chlorine — to keep it in perfect condition at all times.</p>
+      <div class="servicio-icon">
+        <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <h3>Engineering projects</h3>
+      <ul class="card-bullets">
+        <li>Machine room design</li>
+        <li>Filtration systems and pumps</li>
+        <li>Automatic pH and chlorine dosing</li>
+        <li>Hydraulic and electrical engineering</li>
+      </ul>
     </div>
+
     <div class="servicio-card">
-      <div class="servicio-icon"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
-      <h3>Pool installation</h3>
-      <p>Full design, excavation and construction of custom pools for private clients, communities and sports facilities.</p>
+      <div class="servicio-icon">
+        <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+      </div>
+      <h3>Installation & commissioning</h3>
+      <ul class="card-bullets">
+        <li>Full technical execution</li>
+        <li>System testing and start-up</li>
+        <li>Regulatory compliance before opening</li>
+        <li>Handover with full technical documentation</li>
+      </ul>
     </div>
+
     <div class="servicio-card">
-      <div class="servicio-icon"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22V12M12 12C12 7 7 4 2 4M12 12C12 7 17 4 22 4"/><path d="M2 12c3-2 6-2 10 0s7 2 10 0"/></svg></div>
-      <h3>Professional cleaning</h3>
-      <p>Deep cleaning of the pool shell, walls, floor and equipment. We remove algae, limescale and accumulated dirt with specialist tools.</p>
+      <div class="servicio-icon">
+        <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <h3>Maintenance & technical support</h3>
+      <ul class="card-bullets">
+        <li>Periodic equipment and filter checks</li>
+        <li>Fault diagnosis and repair</li>
+        <li>Priority technical assistance</li>
+        <li>Annual maintenance contracts</li>
+      </ul>
     </div>
+
     <div class="servicio-card">
-      <div class="servicio-icon"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 19.07l1.41-1.41M12 2v2M12 20v2M4.93 4.93l1.41 1.41M19.07 19.07l-1.41-1.41M2 12h2M20 12h2"/></svg></div>
-      <h3>Repairs</h3>
-      <p>Diagnosis and repair of faults — leaks, pump issues, cracks, lighting and any technical problem.</p>
-    </div>
-    <div class="servicio-card">
-      <div class="servicio-icon"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
+      <div class="servicio-icon">
+        <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22V12M12 12C12 7 7 4 2 4M12 12C12 7 17 4 22 4"/><path d="M2 12c3-2 6-2 10 0s7 2 10 0"/></svg>
+      </div>
       <h3>Water treatment</h3>
-      <p>Full chemical analysis and balancing — pH, chlorine, alkalinity and hardness. Crystal-clear, safe water all year round.</p>
+      <ul class="card-bullets">
+        <li>Analysis to current health regulations</li>
+        <li>Automatic reagent dosing</li>
+        <li>Certified chemical balance</li>
+        <li>Full Spanish legislative compliance</li>
+      </ul>
     </div>
-    <div class="servicio-card">
-      <div class="servicio-icon"><svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-      <h3>Season opening</h3>
-      <p>Complete preparation of your pool for the swimming season — full equipment check, filling and water adjustment.</p>
+
+  </div>
+</section>
+
+<!-- AUTHORITY — ALBERTO MOHORTE MEDINA -->
+<section class="autoridad" id="alberto">
+  <div class="autoridad-text">
+    <div class="section-label">Sector authority</div>
+    <h2 class="section-title">The expertise that<br>makes the difference</h2>
+    <p class="section-sub">Alberto Mohorte Medina, CEO of Socoval, is a recognised authority in aquatic sports installation engineering and maintenance at national and international level.</p>
+
+    <div class="credencial">
+      <div class="credencial-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+      </div>
+      <div class="credencial-text">
+        <strong>Official trainer of pool technicians</strong>
+        <span>Maintenance of sports aquatic facilities linked to engineering, management and maintenance companies — at national and international level.</span>
+      </div>
     </div>
+
+    <div class="credencial">
+      <div class="credencial-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      </div>
+      <div class="credencial-text">
+        <strong>Health Inspector Training Professor</strong>
+        <span>Official professor for Pool Health Inspectors of the Community of Madrid — the person who applies the regulations, teaches them.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="autoridad-quote">
+    <blockquote>
+      "When Socoval manages your facility, it does so with the knowledge of someone who defines the industry standards and trains the professionals who apply them."
+    </blockquote>
+    <cite>
+      Alberto Mohorte Medina
+      <span>CEO · Socoval Pools & Sports Facilities</span>
+    </cite>
   </div>
 </section>
 
 <!-- WHY SOCOVAL -->
 <section class="porque">
   <div class="section-label">Why choose us</div>
-  <h2 class="section-title">Professionals who<br>know their trade</h2>
-  <p class="section-sub">We're not an app or a franchise. We're a local team with years of real hands-on experience in pools.</p>
+  <h2 class="section-title">Technical expertise that<br>cannot be improvised</h2>
+  <p class="section-sub">We are not a generic service company. We are specialists in aquatic installations with over 30 years of experience in the sector.</p>
   <div class="porque-grid">
-    <div class="porque-item"><div class="porque-num">6</div><h3>Own technicians</h3><p>A permanent, trained team — we don't subcontract. You always know who's coming to your pool.</p></div>
-    <div class="porque-item"><div class="porque-num">24h</div><h3>Fast response</h3><p>Urgent callouts attended the same day. Your pool can't wait — and neither do we.</p></div>
-    <div class="porque-item"><div class="porque-num">★★★★★</div><h3>Personal service</h3><p>We explain what we do and why. No unnecessary jargon, no surprises on your invoice.</p></div>
-    <div class="porque-item"><div class="porque-num">100%</div><h3>Full guarantee</h3><p>If there's any issue after our service, we come back at no extra charge.</p></div>
+    <div class="porque-item"><div class="porque-num">+30</div><h3>Years in the sector</h3><p>Accumulated experience in engineering, installation and maintenance projects for sports aquatic facilities.</p></div>
+    <div class="porque-item"><div class="porque-num">B2B</div><h3>Business only</h3><p>We work exclusively with communities, hotels, sports facilities and management companies. No domestic commitments.</p></div>
+    <div class="porque-item"><div class="porque-num">★★★★★</div><h3>Technical reference</h3><p>Our CEO trains sector technicians and Health Inspectors in Madrid. The knowledge we apply, we teach.</p></div>
+    <div class="porque-item"><div class="porque-num">100%</div><h3>Regulatory compliance</h3><p>We know Spanish pool regulations better than anyone. Your facility always meets Health Authority requirements.</p></div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- HOW WE WORK -->
 <section class="como" id="how">
-  <div class="section-label">The process</div>
-  <h2 class="section-title">That simple</h2>
-  <p class="section-sub">No paperwork, no waiting. In 3 steps your pool is in the hands of professionals.</p>
+  <div class="section-label">How we work</div>
+  <h2 class="section-title">A clear process<br>from start to finish</h2>
+  <p class="section-sub">No improvisation. Every project follows a structured technical process to guarantee the result.</p>
   <div class="pasos">
-    <div class="paso"><div class="paso-num">1</div><h3>Get in touch</h3><p>Call us or send a message. Tell us what you need and where your pool is.</p></div>
-    <div class="paso"><div class="paso-num">2</div><h3>Free quote</h3><p>We send you a clear quote with no small print. No commitment required.</p></div>
-    <div class="paso"><div class="paso-num">3</div><h3>We get to work</h3><p>Our technicians handle everything. You just enjoy your pool.</p></div>
+    <div class="paso"><div class="paso-num">1</div><h3>Project analysis</h3><p>We assess the technical needs of your facility — dimensions, regulations, existing equipment and objectives.</p></div>
+    <div class="paso"><div class="paso-num">2</div><h3>Technical proposal</h3><p>We provide a detailed quote with equipment, timelines and scope of work. No small print.</p></div>
+    <div class="paso"><div class="paso-num">3</div><h3>Execution & handover</h3><p>Our technicians carry out the project and deliver the installation fully operational and regulatory compliant.</p></div>
   </div>
 </section>
 
@@ -438,39 +360,39 @@
 <section class="galeria" id="gallery">
   <div class="section-label">Gallery</div>
   <h2 class="section-title">Results that speak<br>for themselves</h2>
-  <p class="section-sub">A picture is worth a thousand words. This is how pools look after our work.</p>
+  <p class="section-sub">Technical installations completed by Socoval in communities, hotels and sports facilities.</p>
   <div class="galeria-grid">
     <div class="galeria-item">
       <div class="galeria-par">
         <div class="galeria-foto"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Before" loading="lazy"><span class="galeria-etiqueta etiqueta-antes">Before</span></div>
         <div class="galeria-foto"><img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=600&q=80" alt="After" loading="lazy"><span class="galeria-etiqueta etiqueta-despues">After</span></div>
       </div>
-      <div class="galeria-desc">Deep cleaning and water treatment</div>
+      <div class="galeria-desc">Machine room renovation and water treatment</div>
     </div>
     <div class="galeria-item">
       <div class="galeria-par">
         <div class="galeria-foto"><img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?auto=format&fit=crop&w=600&q=80" alt="Before" loading="lazy"><span class="galeria-etiqueta etiqueta-antes">Before</span></div>
         <div class="galeria-foto"><img src="https://images.unsplash.com/photo-1572776913921-763b50fe2d64?auto=format&fit=crop&w=600&q=80" alt="After" loading="lazy"><span class="galeria-etiqueta etiqueta-despues">After</span></div>
       </div>
-      <div class="galeria-desc">Algae removal and full service</div>
+      <div class="galeria-desc">Filtration system and automatic dosing installation</div>
     </div>
     <div class="galeria-item">
       <div class="galeria-par">
         <div class="galeria-foto"><img src="https://images.unsplash.com/photo-1527004013197-933b977b617e?auto=format&fit=crop&w=600&q=80" alt="Before" loading="lazy"><span class="galeria-etiqueta etiqueta-antes">Before</span></div>
         <div class="galeria-foto"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="After" loading="lazy"><span class="galeria-etiqueta etiqueta-despues">After</span></div>
       </div>
-      <div class="galeria-desc">Repair and full maintenance</div>
+      <div class="galeria-desc">Technical commissioning of municipal sports facility</div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
-  <h2>Does your pool need attention?</h2>
-  <p>Request your free quote today — we'll get back to you within 24 hours.</p>
+  <h2>Do you have an aquatic installation project?</h2>
+  <p>Tell us the scope and we will prepare a technical proposal with no commitment.</p>
   <div class="cta-btns">
     <a href="tel:+34000000000" class="btn-primary">Call now</a>
-    <a href="https://wa.me/34000000000?text=Hello%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20my%20pool." class="btn-secondary">WhatsApp</a>
+    <a href="https://wa.me/34000000000?text=Hello%2C%20I%20would%20like%20to%20request%20a%20technical%20proposal%20for%20an%20aquatic%20installation." class="btn-secondary">WhatsApp</a>
   </div>
 </section>
 
@@ -486,25 +408,24 @@
           <path d="M0 60 Q35 52 70 60 Q105 68 140 60 Q175 52 210 60 Q245 68 280 60" stroke="#E8281A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
         </svg>
       </div>
-      <p class="footer-tagline">Pools & Sports Facilities. Your pool in the best hands.</p>
+      <p class="footer-tagline">Engineering and maintenance of sports aquatic installations. Valencia, Spain.</p>
     </div>
     <div class="footer-col">
       <h4>Services</h4>
-      <a href="#services">Regular maintenance</a>
-      <a href="#services">Pool installation</a>
-      <a href="#services">Professional cleaning</a>
+      <a href="#services">Engineering projects</a>
+      <a href="#services">Installation & commissioning</a>
+      <a href="#services">Maintenance & support</a>
       <a href="#services">Water treatment</a>
-      <a href="#services">Repairs</a>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <p>📞 [Phone — to complete]</p>
-      <p>✉️ [Email — to complete]</p>
-      <p>📍 [Area — to complete]</p>
+      <p>[Phone — to complete]</p>
+      <p>[Email — to complete]</p>
+      <p>Valencia, Spain</p>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2024 Socoval Pools & Sports Facilities. All rights reserved.</p>
+    <p>© 2025 Socoval Pools & Sports Facilities. All rights reserved.</p>
     <p>Website by <a href="#" style="color:rgba(255,255,255,0.5)">ValVirtual</a></p>
   </div>
 </footer>
