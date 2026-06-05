@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Socoval — Ingeniería y Mantenimiento de Instalaciones Acuáticas Deportivas</title>
+<meta name="description" content="Socoval: ingeniería, instalación y mantenimiento de instalaciones acuáticas deportivas. Sala de máquinas, filtración, dosificación automática y tratamiento del agua para comunidades, hoteles e instalaciones deportivas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:      #0B2F5E;
+    --navy-dark: #071E3D;
+    --blue:      #1B6FC8;
+    --blue-light:#5CB3E8;
+    --red:       #C0392B;
+    --white:     #FFFFFF;
+    --gray-bg:   #F4F7FB;
+    --gray-text: #64748B;
+    --text:      #0F172A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); }
+
+  /* ─── HEADER ─── */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--navy); padding: 0 6%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 70px; box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .logo-header svg { height: 38px; width: auto; }
+  nav { display: flex; align-items: center; gap: 32px; }
+  nav a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.3px; transition: color 0.2s; }
+  nav a:hover { color: var(--white); }
+  .btn-nav { background: var(--red); color: white !important; padding: 10px 22px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: background 0.2s !important; }
+  .btn-nav:hover { background: #A93226 !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding-top: 70px; min-height: 100vh;
+    background:
+      linear-gradient(to right, rgba(7,30,61,0.92) 55%, rgba(7,30,61,0.5)),
+      url('https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    display: flex; align-items: center; padding-left: 8%; padding-right: 8%;
+  }
+  .hero-content { max-width: 620px; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(91,179,232,0.15); border: 1px solid rgba(91,179,232,0.4);
+    color: var(--blue-light); font-size: 12px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase; padding: 6px 14px;
+    border-radius: 20px; margin-bottom: 24px;
+  }
+  .hero h1 { font-size: clamp(36px, 5vw, 58px); font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+  .hero h1 span { color: var(--blue-light); }
+  .hero p { font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 36px; max-width: 520px; }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary { background: var(--red); color: white; padding: 16px 32px; border-radius: 8px; font-weight: 700; font-size: 15px; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block; }
+  .btn-primary:hover { background: #A93226; transform: translateY(-1px); }
+  .btn-secondary { background: transparent; color: white; padding: 16px 32px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: border-color 0.2s, transform 0.15s; display: inline-block; }
+  .btn-secondary:hover { border-color: white; transform: translateY(-1px); }
+
+  /* Stats bar */
+  .stats-bar { background: var(--navy-dark); padding: 28px 8%; display: flex; gap: 0; border-bottom: 3px solid var(--red); }
+  .stat { flex: 1; text-align: center; padding: 0 20px; border-right: 1px solid rgba(255,255,255,0.1); }
+  .stat:last-child { border-right: none; }
+  .stat-number { font-size: 36px; font-weight: 800; color: var(--blue-light); line-height: 1; margin-bottom: 6px; }
+  .stat-label  { font-size: 13px; color: rgba(255,255,255,0.6); font-weight: 500; }
+
+  /* ─── SECCIONES ─── */
+  section { padding: 90px 8%; }
+  .section-label { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue); margin-bottom: 12px; }
+  .section-title { font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+  .section-sub   { font-size: 17px; color: var(--gray-text); line-height: 1.7; max-width: 560px; margin-bottom: 56px; }
+
+  /* ─── SERVICIOS ─── */
+  .servicios { background: var(--gray-bg); }
+  .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .servicio-card { background: white; border-radius: 16px; padding: 36px 30px; border: 1px solid rgba(0,0,0,0.07); transition: transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
+  .servicio-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--blue); border-radius: 4px 0 0 4px; transition: width 0.2s; }
+  .servicio-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(11,47,94,0.12); }
+  .servicio-card:hover::before { width: 6px; }
+  .servicio-icon { width: 52px; height: 52px; background: rgba(27,111,200,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .servicio-icon svg { width: 26px; height: 26px; stroke: var(--blue); }
+  .servicio-card h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .servicio-card p  { font-size: 14px; color: var(--gray-text); line-height: 1.6; }
+
+  /* ─── AUTORIDAD (Alberto) ─── */
+  .autoridad {
+    background: var(--navy-dark);
+    padding: 90px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .autoridad-text .section-label { color: var(--blue-light); }
+  .autoridad-text .section-title { color: white; margin-bottom: 24px; }
+  .autoridad-text .section-sub   { color: rgba(255,255,255,0.65); margin-bottom: 36px; max-width: 100%; }
+  .credencial {
+    display: flex; align-items: flex-start; gap: 16px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; padding: 24px; margin-bottom: 16px;
+  }
+  .credencial-icon { width: 44px; height: 44px; background: var(--blue); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .credencial-icon svg { width: 22px; height: 22px; stroke: white; stroke-width: 2; fill: none; }
+  .credencial-text strong { display: block; font-size: 14px; font-weight: 700; color: white; margin-bottom: 4px; }
+  .credencial-text span  { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+  .autoridad-quote {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 4px solid var(--blue-light);
+    border-radius: 0 16px 16px 0;
+    padding: 36px 40px;
+  }
+  .autoridad-quote blockquote {
+    font-size: 22px; font-weight: 600; color: white; line-height: 1.5;
+    font-style: italic; margin-bottom: 20px;
+  }
+  .autoridad-quote cite { font-size: 14px; color: var(--blue-light); font-style: normal; font-weight: 700; letter-spacing: 0.5px; }
+  .autoridad-quote cite span { display: block; font-size: 12px; color: rgba(255,255,255,0.4); font-weight: 400; margin-top: 4px; letter-spacing: 0; }
+
+  /* ─── POR QUÉ ─── */
+  .porque { background: var(--navy); color: white; }
+  .porque .section-title { color: white; }
+  .porque .section-label { color: var(--blue-light); }
+  .porque .section-sub   { color: rgba(255,255,255,0.65); }
+  .porque-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
+  .porque-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px 26px; text-align: center; transition: background 0.2s; }
+  .porque-item:hover { background: rgba(255,255,255,0.1); }
+  .porque-num  { font-size: 42px; font-weight: 800; color: var(--blue-light); margin-bottom: 10px; line-height: 1; }
+  .porque-item h3 { font-size: 16px; font-weight: 700; color: white; margin-bottom: 10px; }
+  .porque-item p  { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+  /* ─── CÓMO FUNCIONA ─── */
+  .como { background: white; }
+  .pasos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; position: relative; }
+  .paso { text-align: center; padding: 0 30px; position: relative; }
+  .paso:not(:last-child)::after { content: '→'; position: absolute; right: -10px; top: 28px; font-size: 24px; color: var(--blue-light); }
+  .paso-num { width: 64px; height: 64px; background: var(--navy); color: white; font-size: 24px; font-weight: 800; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+  .paso h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+  .paso p  { font-size: 14px; color: var(--gray-text); line-height: 1.6; }
+
+  /* ─── GALERÍA ─── */
+  .galeria { background: var(--gray-bg); }
+  .galeria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; }
+  .galeria-item { border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.1); }
+  .galeria-par  { display: grid; grid-template-columns: 1fr 1fr; }
+  .galeria-foto { aspect-ratio: 4/3; position: relative; overflow: hidden; }
+  .galeria-foto img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+  .galeria-item:hover .galeria-foto img { transform: scale(1.04); }
+  .galeria-etiqueta { position: absolute; top: 12px; left: 12px; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  .etiqueta-antes   { background: rgba(192,57,43,0.85);  color: white; }
+  .etiqueta-despues { background: rgba(27,111,200,0.85); color: white; }
+  .galeria-desc { background: white; padding: 18px 22px; font-size: 14px; font-weight: 600; color: var(--navy); border-top: 3px solid var(--blue); }
+
+  /* ─── CTA ─── */
+  .cta-section { background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #0E4080 100%); text-align: center; padding: 100px 8%; position: relative; overflow: hidden; }
+  .cta-section::before { content: ''; position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%); width: 600px; height: 120px; background: rgba(91,179,232,0.08); border-radius: 50%; filter: blur(40px); }
+  .cta-section h2 { font-size: clamp(28px, 4vw, 46px); font-weight: 800; color: white; margin-bottom: 16px; position: relative; }
+  .cta-section p  { font-size: 18px; color: rgba(255,255,255,0.7); margin-bottom: 40px; position: relative; }
+  .cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; position: relative; }
+
+  /* ─── FOOTER ─── */
+  footer { background: var(--navy-dark); padding: 50px 8% 30px; border-top: 3px solid var(--red); }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; flex-wrap: wrap; margin-bottom: 40px; }
+  .footer-logo svg { height: 32px; width: auto; margin-bottom: 14px; }
+  .footer-tagline  { font-size: 13px; color: rgba(255,255,255,0.5); max-width: 220px; line-height: 1.6; }
+  .footer-col h4 { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+  .footer-col a, .footer-col p { display: block; font-size: 14px; color: rgba(255,255,255,0.7); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--blue-light); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .autoridad { grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 768px) {
+    nav a:not(.btn-nav) { display: none; }
+    .stats-bar { flex-wrap: wrap; gap: 20px; }
+    .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; }
+    .stat:last-child { border-bottom: none; }
+    .paso:not(:last-child)::after { display: none; }
+    .galeria-par { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a class="logo-header" href="#">
+    <svg viewBox="0 0 420 98" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="58" font-family="'Inter','Segoe UI',Arial,sans-serif" font-size="58" font-weight="800" fill="white" letter-spacing="-1">SOCOVAL</text>
+      <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="white"   stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="#5CB3E8" stroke-width="3"   stroke-linecap="round" fill="none"/>
+      <path d="M0 84 Q52 74 105 84 Q157 94 210 84 Q262 74 315 84 Q367 94 420 84" stroke="#E8281A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    </svg>
+  </a>
+  <nav>
+    <a href="#servicios">Servicios</a>
+    <a href="#alberto">Formación</a>
+    <a href="#como">Cómo trabajamos</a>
+    <a href="#contacto" class="btn-nav">Solicitar proyecto</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">Ingeniería de instalaciones acuáticas deportivas</span>
+    <h1>Ingeniería, instalación y mantenimiento<br><span>a nivel profesional</span></h1>
+    <p>Especialistas en proyectos de instalaciones acuáticas para comunidades, hoteles, instalaciones deportivas y empresas de gestión. Sala de máquinas, filtración, dosificación automática y mantenimiento técnico.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-primary">Solicitar proyecto</a>
+      <a href="#servicios" class="btn-secondary">Ver servicios</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-number">+30</div><div class="stat-label">Años de experiencia</div></div>
+  <div class="stat"><div class="stat-number">6</div><div class="stat-label">Técnicos especializados</div></div>
+  <div class="stat"><div class="stat-number">+100</div><div class="stat-label">Proyectos ejecutados</div></div>
+  <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Garantía de ejecución</div></div>
+</div>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <div class="section-label">Lo que hacemos</div>
+  <h2 class="section-title">Soluciones técnicas completas<br>para instalaciones acuáticas</h2>
+  <p class="section-sub">Desde el proyecto de ingeniería hasta el mantenimiento continuo — gestionamos la instalación técnica completa para que tú solo te preocupes por los usuarios.</p>
+  <div class="servicios-grid">
+
+    <div class="servicio-card">
+      <div class="servicio-icon">
+        <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <h3>Proyectos de ingeniería</h3>
+      <p>Diseño e instalación de salas de máquinas completas: sistemas de filtración, bombas de circulación, dosificadores automáticos de pH y cloro, y equipos de control del agua para instalaciones acuáticas deportivas.</p>
+    </div>
+
+    <div class="servicio-card">
+      <div class="servicio-icon">
+        <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+      </div>
+      <h3>Instalación y puesta en marcha</h3>
+      <p>Construcción e instalación de piscinas para instalaciones deportivas, hoteles y comunidades — desde la excavación hasta la puesta a punto técnica completa y validación normativa.</p>
+    </div>
+
+    <div class="servicio-card">
+      <div class="servicio-icon">
+        <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <h3>Mantenimiento y soporte técnico</h3>
+      <p>Revisión periódica de equipos, bombas, filtros y dosificadores. Diagnóstico y reparación rápida de averías para minimizar el tiempo de parada. Contratos anuales para comunidades, hoteles e instalaciones deportivas.</p>
+    </div>
+
+    <div class="servicio-card">
+      <div class="servicio-icon">
+        <svg fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22V12M12 12C12 7 7 4 2 4M12 12C12 7 17 4 22 4"/><path d="M2 12c3-2 6-2 10 0s7 2 10 0"/></svg>
+      </div>
+      <h3>Tratamiento del agua</h3>
+      <p>Análisis y control del agua según normativa vigente de Sanidad. Dosificación automática de reactivos, equilibrio químico y cumplimiento de los parámetros exigidos por la legislación española.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- AUTORIDAD — ALBERTO MOHORTE MEDINA -->
+<section class="autoridad" id="alberto">
+  <div class="autoridad-text">
+    <div class="section-label">Autoridad del sector</div>
+    <h2 class="section-title">El conocimiento que marca<br>la diferencia</h2>
+    <p class="section-sub">Alberto Mohorte Medina, CEO de Socoval, es una referencia reconocida en la ingeniería y mantenimiento de instalaciones acuáticas deportivas a nivel nacional e internacional.</p>
+
+    <div class="credencial">
+      <div class="credencial-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+      </div>
+      <div class="credencial-text">
+        <strong>Formador oficial de técnicos de piscinas</strong>
+        <span>Mantenimiento de instalaciones deportivas acuáticas vinculadas a empresas de ingeniería, gestión y mantenimiento — a nivel nacional e internacional.</span>
+      </div>
+    </div>
+
+    <div class="credencial">
+      <div class="credencial-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      </div>
+      <div class="credencial-text">
+        <strong>Profesor de Inspectores de Sanidad</strong>
+        <span>Profesor oficial de los Inspectores de Sanidad (Piscinas) de la Comunidad de Madrid — quien aplica la normativa, la enseña.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="autoridad-quote">
+    <blockquote>
+      "Cuando Socoval gestiona tu instalación, lo hace con el conocimiento de quien define los estándares del sector y forma a los profesionales que los aplican."
+    </blockquote>
+    <cite>
+      Alberto Mohorte Medina
+      <span>CEO · Socoval Piscinas & Instalaciones Deportivas</span>
+    </cite>
+  </div>
+</section>
+
+<!-- POR QUÉ SOCOVAL -->
+<section class="porque">
+  <div class="section-label">Por qué elegirnos</div>
+  <h2 class="section-title">Experiencia técnica que<br>no se improvisa</h2>
+  <p class="section-sub">No somos una empresa de servicios genérica. Somos especialistas en instalaciones acuáticas con más de 30 años de experiencia en el sector.</p>
+  <div class="porque-grid">
+    <div class="porque-item"><div class="porque-num">+30</div><h3>Años en el sector</h3><p>Experiencia acumulada en proyectos de ingeniería, instalación y mantenimiento de instalaciones acuáticas deportivas.</p></div>
+    <div class="porque-item"><div class="porque-num">B2B</div><h3>Solo empresas</h3><p>Trabajamos exclusivamente con comunidades, hoteles, instalaciones deportivas y empresas de gestión. Sin compromisos domésticos.</p></div>
+    <div class="porque-item"><div class="porque-num">★★★★★</div><h3>Referencia técnica</h3><p>Nuestro CEO forma a los técnicos del sector y a los Inspectores de Sanidad de Madrid. El conocimiento que aplicamos, lo enseñamos.</p></div>
+    <div class="porque-item"><div class="porque-num">100%</div><h3>Cumplimiento normativo</h3><p>Conocemos la normativa española de piscinas mejor que nadie. Tu instalación siempre cumple con los requisitos de Sanidad.</p></div>
+  </div>
+</section>
+
+<!-- CÓMO FUNCIONA -->
+<section class="como" id="como">
+  <div class="section-label">Cómo trabajamos</div>
+  <h2 class="section-title">Un proceso claro<br>de principio a fin</h2>
+  <p class="section-sub">Sin improvisación. Cada proyecto sigue un proceso técnico estructurado para garantizar el resultado.</p>
+  <div class="pasos">
+    <div class="paso"><div class="paso-num">1</div><h3>Análisis del proyecto</h3><p>Evaluamos las necesidades técnicas de tu instalación — dimensiones, normativa, equipos existentes y objetivos.</p></div>
+    <div class="paso"><div class="paso-num">2</div><h3>Propuesta técnica</h3><p>Elaboramos un presupuesto detallado con los equipos, plazos y alcance del trabajo. Sin letra pequeña.</p></div>
+    <div class="paso"><div class="paso-num">3</div><h3>Ejecución y entrega</h3><p>Nuestros técnicos ejecutan el proyecto y te entregamos la instalación funcionando y en cumplimiento normativo.</p></div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="galeria" id="galeria">
+  <div class="section-label">Galería</div>
+  <h2 class="section-title">Resultados que hablan<br>por sí solos</h2>
+  <p class="section-sub">Instalaciones técnicas ejecutadas por Socoval en comunidades, hoteles e instalaciones deportivas.</p>
+  <div class="galeria-grid">
+    <div class="galeria-item">
+      <div class="galeria-par">
+        <div class="galeria-foto"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Antes" loading="lazy"><span class="galeria-etiqueta etiqueta-antes">Antes</span></div>
+        <div class="galeria-foto"><img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?auto=format&fit=crop&w=600&q=80" alt="Después" loading="lazy"><span class="galeria-etiqueta etiqueta-despues">Después</span></div>
+      </div>
+      <div class="galeria-desc">Renovación de sala de máquinas y tratamiento del agua</div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-par">
+        <div class="galeria-foto"><img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?auto=format&fit=crop&w=600&q=80" alt="Antes" loading="lazy"><span class="galeria-etiqueta etiqueta-antes">Antes</span></div>
+        <div class="galeria-foto"><img src="https://images.unsplash.com/photo-1572776913921-763b50fe2d64?auto=format&fit=crop&w=600&q=80" alt="Después" loading="lazy"><span class="galeria-etiqueta etiqueta-despues">Después</span></div>
+      </div>
+      <div class="galeria-desc">Instalación de sistema de filtración y dosificación automática</div>
+    </div>
+    <div class="galeria-item">
+      <div class="galeria-par">
+        <div class="galeria-foto"><img src="https://images.unsplash.com/photo-1527004013197-933b977b617e?auto=format&fit=crop&w=600&q=80" alt="Antes" loading="lazy"><span class="galeria-etiqueta etiqueta-antes">Antes</span></div>
+        <div class="galeria-foto"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Después" loading="lazy"><span class="galeria-etiqueta etiqueta-despues">Después</span></div>
+      </div>
+      <div class="galeria-desc">Puesta a punto técnica de instalación deportiva municipal</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contacto">
+  <h2>¿Tienes un proyecto de instalación acuática?</h2>
+  <p>Cuéntanos el alcance y te preparamos una propuesta técnica sin compromiso.</p>
+  <div class="cta-btns">
+    <a href="tel:+34000000000" class="btn-primary">Llamar ahora</a>
+    <a href="https://wa.me/34000000000?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20una%20propuesta%20t%C3%A9cnica%20para%20una%20instalaci%C3%B3n%20acu%C3%A1tica." class="btn-secondary">WhatsApp</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">
+        <svg viewBox="0 0 280 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="40" font-family="'Inter','Segoe UI',Arial,sans-serif" font-size="40" font-weight="800" fill="white" letter-spacing="-1">SOCOVAL</text>
+          <path d="M0 48 Q35 40 70 48 Q105 56 140 48 Q175 40 210 48 Q245 56 280 48" stroke="white"   stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M0 54 Q35 46 70 54 Q105 62 140 54 Q175 46 210 54 Q245 62 280 54" stroke="#5CB3E8" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+          <path d="M0 60 Q35 52 70 60 Q105 68 140 60 Q175 52 210 60 Q245 68 280 60" stroke="#E8281A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+      <p class="footer-tagline">Ingeniería y mantenimiento de instalaciones acuáticas deportivas. Nacional e internacional.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <a href="#servicios">Proyectos de ingeniería</a>
+      <a href="#servicios">Mantenimiento técnico</a>
+      <a href="#servicios">Tratamiento del agua</a>
+      <a href="#servicios">Instalación de piscinas</a>
+      <a href="#servicios">Reparación de equipos</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <p>📞 [Teléfono — a completar]</p>
+      <p>✉️ [Email — a completar]</p>
+      <p>📍 Valencia · España</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Socoval Piscinas & Instalaciones Deportivas. Todos los derechos reservados.</p>
+    <p>Web por <a href="#" style="color:rgba(255,255,255,0.5)">ValVirtual</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
