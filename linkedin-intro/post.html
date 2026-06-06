@@ -6,241 +6,199 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #1a1a1a; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: 'Inter', sans-serif; padding: 20px; }
-  .scale-wrap { transform-origin: top center; }
+  body {
+    background: #111;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+  }
 
-  .slide {
-    width: 1200px;
-    height: 628px;
+  .card {
     background: #071E3D;
-    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 16px;
     overflow: hidden;
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Decoração fundo */
-  .slide::before {
+  /* decoração fundo */
+  .card::before {
     content: '';
-    position: absolute;
-    top: -160px; right: -160px;
-    width: 520px; height: 520px;
+    position: absolute; top: -120px; right: -120px;
+    width: 400px; height: 400px;
     background: radial-gradient(circle, rgba(27,111,200,0.15), transparent 70%);
-    border-radius: 50%;
-  }
-  .slide::after {
-    content: '';
-    position: absolute;
-    bottom: -100px; left: 40%;
-    width: 360px; height: 360px;
-    background: radial-gradient(circle, rgba(92,179,232,0.07), transparent 70%);
-    border-radius: 50%;
+    border-radius: 50%; pointer-events: none;
   }
 
-  /* Coluna esquerda */
+  /* linha vermelha esquerda */
+  .red-line {
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #C0392B, transparent);
+  }
+
+  /* ─── COLUNA ESQUERDA ─── */
   .left {
-    padding: 64px 56px;
+    padding: clamp(28px, 5%, 64px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 32px;
     position: relative;
     z-index: 2;
     border-right: 1px solid rgba(255,255,255,0.06);
   }
 
-  .logo-area { display: flex; flex-direction: column; gap: 16px; }
+  .logo-area { display: flex; flex-direction: column; gap: 14px; }
 
   .tag {
     display: inline-flex;
-    align-items: center;
-    gap: 8px;
     background: rgba(27,111,200,0.2);
     border: 1px solid rgba(27,111,200,0.35);
     color: #5CB3E8;
-    font-size: 11px;
+    font-size: clamp(9px, 1.2vw, 11px);
     font-weight: 700;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    padding: 8px 16px;
+    padding: 7px 14px;
     border-radius: 4px;
     width: fit-content;
   }
 
   .headline {
-    font-size: 46px;
+    font-size: clamp(28px, 4vw, 46px);
     font-weight: 900;
-    color: #FFFFFF;
+    color: #fff;
     line-height: 1.0;
     letter-spacing: -0.04em;
   }
   .headline span { color: #5CB3E8; }
 
   .subline {
-    font-size: 17px;
+    font-size: clamp(13px, 1.5vw, 17px);
     font-weight: 500;
     color: rgba(255,255,255,0.55);
-    line-height: 1.5;
-    max-width: 380px;
+    line-height: 1.55;
   }
 
-  /* Stats bar */
   .stats {
     display: flex;
-    gap: 32px;
-    padding-top: 28px;
+    gap: clamp(16px, 3%, 32px);
+    padding-top: 20px;
     border-top: 1px solid rgba(255,255,255,0.08);
+    flex-wrap: wrap;
   }
-  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-item { display: flex; flex-direction: column; gap: 3px; }
   .stat-num {
-    font-size: 28px;
-    font-weight: 900;
-    color: #FFFFFF;
-    letter-spacing: -0.03em;
-    line-height: 1;
+    font-size: clamp(20px, 2.5vw, 28px);
+    font-weight: 900; color: #fff; letter-spacing: -0.03em; line-height: 1;
   }
   .stat-num span { color: #5CB3E8; }
   .stat-label {
-    font-size: 11px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.35);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-size: clamp(9px, 1vw, 11px);
+    font-weight: 600; color: rgba(255,255,255,0.35);
+    letter-spacing: 0.12em; text-transform: uppercase;
   }
 
-  /* Coluna direita */
+  /* ─── COLUNA DIREITA ─── */
   .right {
-    padding: 56px 56px 56px 52px;
+    padding: clamp(28px, 5%, 56px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 28px;
     position: relative;
     z-index: 2;
   }
 
-  /* Card Alberto */
   .alberto-card {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);
     border-radius: 12px;
-    padding: 28px 32px;
+    padding: clamp(18px, 3%, 28px) clamp(18px, 3%, 32px);
   }
 
   .alberto-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: #5CB3E8;
-    margin-bottom: 16px;
+    font-size: clamp(9px, 1vw, 10px);
+    font-weight: 700; letter-spacing: 0.22em;
+    text-transform: uppercase; color: #5CB3E8; margin-bottom: 12px;
   }
-
   .alberto-name {
-    font-size: 22px;
-    font-weight: 800;
-    color: #FFFFFF;
-    letter-spacing: -0.02em;
-    margin-bottom: 6px;
+    font-size: clamp(16px, 2vw, 22px);
+    font-weight: 800; color: #fff; letter-spacing: -0.02em; margin-bottom: 4px;
   }
-
   .alberto-role {
-    font-size: 13px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.45);
-    margin-bottom: 24px;
-    letter-spacing: 0.02em;
+    font-size: clamp(11px, 1.2vw, 13px);
+    font-weight: 500; color: rgba(255,255,255,0.45); margin-bottom: 20px;
   }
 
-  .credentials {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .cred-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
+  .credentials { display: flex; flex-direction: column; gap: 10px; }
+  .cred-item { display: flex; align-items: flex-start; gap: 10px; }
   .cred-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #1B6FC8;
-    flex-shrink: 0;
-    margin-top: 6px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #1B6FC8; flex-shrink: 0; margin-top: 5px;
   }
-
   .cred-text {
-    font-size: 13px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.6);
-    line-height: 1.45;
+    font-size: clamp(11px, 1.2vw, 13px);
+    font-weight: 500; color: rgba(255,255,255,0.6); line-height: 1.45;
   }
 
-  /* CTA bottom right */
-  .cta-area {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
+  .cta-area { display: flex; flex-direction: column; gap: 8px; }
   .cta-text {
-    font-size: 18px;
-    font-weight: 700;
-    color: #FFFFFF;
-    line-height: 1.35;
-    letter-spacing: -0.01em;
+    font-size: clamp(14px, 1.6vw, 18px);
+    font-weight: 700; color: #fff; line-height: 1.35;
   }
-
   .cta-sub {
-    font-size: 13px;
-    font-weight: 500;
-    color: rgba(255,255,255,0.4);
+    font-size: clamp(10px, 1.1vw, 13px);
+    font-weight: 500; color: rgba(255,255,255,0.4);
   }
 
-  /* Linha vermelha decorativa esquerda */
-  .red-line {
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
-    background: linear-gradient(to bottom, #C0392B 0%, transparent 100%);
-  }
-
-  /* Handle */
   .handle {
-    position: absolute;
-    bottom: 28px;
-    right: 56px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.2);
-    z-index: 2;
+    position: absolute; bottom: 20px; right: clamp(20px, 4%, 56px);
+    font-size: clamp(9px, 1vw, 12px); font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(255,255,255,0.2); z-index: 2;
+  }
+
+  /* ─── MOBILE: coluna única ─── */
+  @media (max-width: 640px) {
+    .card {
+      grid-template-columns: 1fr;
+      border-radius: 12px;
+    }
+    .left {
+      border-right: none;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .handle { position: static; margin: 0 28px 24px; }
+    .right { padding-bottom: 16px; }
   }
 </style>
 </head>
 <body>
 
-<div class="scale-wrap" id="scaleWrap"><div class="slide">
+<div class="card">
   <div class="red-line"></div>
 
   <!-- ESQUERDA -->
   <div class="left">
     <div class="logo-area">
-      <!-- Logo -->
-      <svg width="180" height="42" viewBox="0 0 420 98" fill="none">
+      <svg width="170" height="40" viewBox="0 0 420 98" fill="none">
         <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="white" letter-spacing="-1">SOCOVAL</text>
         <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
         <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="#5CB3E8" stroke-width="3" stroke-linecap="round" fill="none"/>
         <path d="M0 84 Q52 74 105 84 Q157 94 210 84 Q262 74 315 84 Q367 94 420 84" stroke="#E8281A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
       </svg>
-
       <div class="tag">Ingeniería de instalaciones acuáticas</div>
     </div>
 
-    <div style="display:flex;flex-direction:column;gap:16px;">
+    <div style="display:flex;flex-direction:column;gap:14px;">
       <h1 class="headline">30 años.<br>Una sola<br><span>especialidad.</span></h1>
       <p class="subline">Instalación y mantenimiento profesional de piscinas para comunidades, hoteles e instalaciones deportivas en Valencia.</p>
     </div>
@@ -261,25 +219,16 @@
     </div>
   </div>
 
-  <!-- DERECHA -->
+  <!-- DIREITA -->
   <div class="right">
     <div class="alberto-card">
       <div class="alberto-label">Dirección técnica</div>
       <div class="alberto-name">Alberto Mohorte Medina</div>
       <div class="alberto-role">CEO · Socoval</div>
       <div class="credentials">
-        <div class="cred-item">
-          <div class="cred-dot"></div>
-          <div class="cred-text">Formador oficial de técnicos de piscinas a nivel nacional e internacional</div>
-        </div>
-        <div class="cred-item">
-          <div class="cred-dot"></div>
-          <div class="cred-text">Profesor de formación para Inspectores de Sanidad, Comunidad de Madrid</div>
-        </div>
-        <div class="cred-item">
-          <div class="cred-dot"></div>
-          <div class="cred-text">30 años de experiencia en instalaciones acuáticas deportivas y comunitarias</div>
-        </div>
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Formador oficial de técnicos de piscinas a nivel nacional e internacional</div></div>
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">Profesor de formación para Inspectores de Sanidad, Comunidad de Madrid</div></div>
+        <div class="cred-item"><div class="cred-dot"></div><div class="cred-text">30 años de experiencia en instalaciones acuáticas deportivas y comunitarias</div></div>
       </div>
     </div>
 
@@ -290,23 +239,7 @@
   </div>
 
   <div class="handle">linkedin.com/company/socoval</div>
-</div></div>
-
-<script>
-  function scalePost() {
-    const wrap = document.getElementById('scaleWrap');
-    const slide = wrap.querySelector('.slide');
-    const W = slide.offsetWidth;
-    const vw = window.innerWidth - 40;
-    const scale = vw < W ? vw / W : 1;
-    wrap.style.transform = `scale(${scale})`;
-    wrap.style.width = W + 'px';
-    wrap.style.height = (slide.offsetHeight * scale) + 'px';
-    document.body.style.minHeight = (slide.offsetHeight * scale + 40) + 'px';
-  }
-  window.addEventListener('load', scalePost);
-  window.addEventListener('resize', scalePost);
-</script>
+</div>
 
 </body>
 </html>
