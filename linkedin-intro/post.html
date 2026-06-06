@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a1a; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: 'Inter', sans-serif; }
+
+  .slide {
+    width: 1200px;
+    height: 628px;
+    background: #071E3D;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Decoração fundo */
+  .slide::before {
+    content: '';
+    position: absolute;
+    top: -160px; right: -160px;
+    width: 520px; height: 520px;
+    background: radial-gradient(circle, rgba(27,111,200,0.15), transparent 70%);
+    border-radius: 50%;
+  }
+  .slide::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; left: 40%;
+    width: 360px; height: 360px;
+    background: radial-gradient(circle, rgba(92,179,232,0.07), transparent 70%);
+    border-radius: 50%;
+  }
+
+  /* Coluna esquerda */
+  .left {
+    padding: 64px 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .logo-area { display: flex; flex-direction: column; gap: 16px; }
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(27,111,200,0.2);
+    border: 1px solid rgba(27,111,200,0.35);
+    color: #5CB3E8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 4px;
+    width: fit-content;
+  }
+
+  .headline {
+    font-size: 46px;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+  }
+  .headline span { color: #5CB3E8; }
+
+  .subline {
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.5;
+    max-width: 380px;
+  }
+
+  /* Stats bar */
+  .stats {
+    display: flex;
+    gap: 32px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-num {
+    font-size: 28px;
+    font-weight: 900;
+    color: #FFFFFF;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .stat-num span { color: #5CB3E8; }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* Coluna direita */
+  .right {
+    padding: 56px 56px 56px 52px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Card Alberto */
+  .alberto-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 28px 32px;
+  }
+
+  .alberto-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #5CB3E8;
+    margin-bottom: 16px;
+  }
+
+  .alberto-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+
+  .alberto-role {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+  }
+
+  .credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cred-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .cred-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #1B6FC8;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .cred-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.45;
+  }
+
+  /* CTA bottom right */
+  .cta-area {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cta-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+
+  .cta-sub {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* Linha vermelha decorativa esquerda */
+  .red-line {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #C0392B 0%, transparent 100%);
+  }
+
+  /* Handle */
+  .handle {
+    position: absolute;
+    bottom: 28px;
+    right: 56px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    z-index: 2;
+  }
+</style>
+</head>
+<body>
+
+<div class="slide">
+  <div class="red-line"></div>
+
+  <!-- ESQUERDA -->
+  <div class="left">
+    <div class="logo-area">
+      <!-- Logo -->
+      <svg width="180" height="42" viewBox="0 0 420 98" fill="none">
+        <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="white" letter-spacing="-1">SOCOVAL</text>
+        <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="#5CB3E8" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M0 84 Q52 74 105 84 Q157 94 210 84 Q262 74 315 84 Q367 94 420 84" stroke="#E8281A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      </svg>
+
+      <div class="tag">Ingeniería de instalaciones acuáticas</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:16px;">
+      <h1 class="headline">30 años.<br>Una sola<br><span>especialidad.</span></h1>
+      <p class="subline">Instalación y mantenimiento profesional de piscinas para comunidades, hoteles e instalaciones deportivas en Valencia.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-num"><span>+</span>30</div>
+        <div class="stat-label">años</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">6</div>
+        <div class="stat-label">técnicos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span>+</span>100</div>
+        <div class="stat-label">proyectos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DERECHA -->
+  <div class="right">
+    <div class="alberto-card">
+      <div class="alberto-label">Dirección técnica</div>
+      <div class="alberto-name">Alberto Mohorte Medina</div>
+      <div class="alberto-role">CEO · Socoval</div>
+      <div class="credentials">
+        <div class="cred-item">
+          <div class="cred-dot"></div>
+          <div class="cred-text">Formador oficial de técnicos de piscinas a nivel nacional e internacional</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-dot"></div>
+          <div class="cred-text">Profesor de formación para Inspectores de Sanidad, Comunidad de Madrid</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-dot"></div>
+          <div class="cred-text">30 años de experiencia en instalaciones acuáticas deportivas y comunitarias</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-area">
+      <p class="cta-text">Gestionamos su instalación para que no tenga que preocuparse.</p>
+      <p class="cta-sub">Comunidades · Hoteles · Instalaciones deportivas · Empresas</p>
+    </div>
+  </div>
+
+  <div class="handle">linkedin.com/company/socoval</div>
+</div>
+
+</body>
+</html>
