@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a1a; display: flex; flex-direction: column; gap: 24px; padding: 24px; align-items: center; font-family: 'Inter', sans-serif; }
+
+  .slide {
+    width: 1080px;
+    height: 1350px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  /* ─── HEADER ─── */
+  .slide-header {
+    position: absolute;
+    top: 70px; left: 80px; right: 80px;
+    display: flex; align-items: center; justify-content: space-between;
+    z-index: 10;
+  }
+  .counter {
+    font-size: 28px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .counter-light { color: rgba(255,255,255,0.4); }
+  .counter-dark  { color: rgba(11,47,94,0.3); }
+
+  /* ─── FOOTER ─── */
+  .slide-footer {
+    position: absolute;
+    bottom: 70px; left: 80px; right: 80px;
+    display: flex; align-items: center; justify-content: space-between;
+    z-index: 10;
+  }
+  .handle-light { font-size: 28px; font-weight: 600; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); }
+  .handle-dark  { font-size: 28px; font-weight: 600; letter-spacing: 0.08em; color: rgba(11,47,94,0.35); }
+  .footer-label { font-size: 24px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+
+  /* ─── BODY ─── */
+  .slide-body {
+    position: absolute;
+    top: 190px; bottom: 150px; left: 80px; right: 80px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+
+  .eyebrow {
+    font-size: 28px; font-weight: 800; letter-spacing: 0.24em;
+    text-transform: uppercase; margin-bottom: 36px;
+  }
+  .rule {
+    width: 80px; height: 6px; border-radius: 3px; margin-bottom: 48px;
+  }
+  h1 {
+    font-size: 128px; font-weight: 900; line-height: 0.96;
+    letter-spacing: -0.04em; margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 104px; font-weight: 800; line-height: 1.02;
+    letter-spacing: -0.035em; margin-bottom: 40px;
+  }
+  .sub {
+    font-size: 46px; font-weight: 500; line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+  .body-text {
+    font-size: 46px; font-weight: 500; line-height: 1.45;
+    letter-spacing: -0.01em;
+  }
+
+  /* número decorativo */
+  .big-num {
+    font-size: 420px; font-weight: 900; line-height: 1;
+    letter-spacing: -0.06em;
+    position: absolute; right: -20px; bottom: -60px;
+    z-index: 0; pointer-events: none;
+  }
+
+  /* ══ SLIDE 1 — COVER ══ */
+  .s1 { background: #071E3D; }
+  .s1::after {
+    content: '';
+    position: absolute; bottom: 0; right: 0;
+    width: 560px; height: 560px;
+    background: radial-gradient(circle at 80% 80%, rgba(27,111,200,0.18), transparent 70%);
+    z-index: 0;
+  }
+
+  /* ══ SLIDE 2 — CONTEXT ══ */
+  .s2 { background: #F4F7FB; }
+  .s2 .ph-box {
+    display: inline-flex; align-items: baseline; gap: 20px;
+    background: #0B2F5E; border-radius: 24px;
+    padding: 28px 52px; margin-bottom: 56px;
+  }
+  .s2 .ph-num   { font-size: 120px; font-weight: 900; color: #5CB3E8; letter-spacing: -0.04em; line-height: 1; }
+  .s2 .ph-arrow { font-size: 40px; font-weight: 700; color: rgba(255,255,255,0.4); }
+  .s2 .ph-label { font-size: 28px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; margin-left: 12px; }
+
+  /* ══ SLIDES 3/4/5 — SIGNALS ══ */
+  .s3 { background: #0B2F5E; overflow: hidden; }
+  .s4 { background: #1B6FC8; overflow: hidden; }
+  .s5 { background: #FFFFFF; overflow: hidden; }
+
+  /* ══ SLIDE 6 — CTA ══ */
+  .s6 { background: #C0392B; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .s6::before {
+    content: ''; position: absolute; top: -140px; right: -140px;
+    width: 560px; height: 560px; background: rgba(255,255,255,0.06); border-radius: 50%;
+  }
+  .s6::after {
+    content: ''; position: absolute; bottom: -100px; left: -100px;
+    width: 400px; height: 400px; background: rgba(255,255,255,0.06); border-radius: 50%;
+  }
+  .cta-title  { font-size: 96px; font-weight: 900; color: #fff; line-height: 1.04; letter-spacing: -0.035em; max-width: 860px; margin-bottom: 40px; }
+  .cta-sub    { font-size: 44px; font-weight: 500; color: rgba(255,255,255,0.8); margin-bottom: 72px; max-width: 800px; }
+  .cta-btn    { background: #fff; color: #C0392B; font-size: 32px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 32px 72px; border-radius: 60px; margin-bottom: 72px; }
+  .cta-handle { font-size: 28px; font-weight: 600; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); text-transform: uppercase; }
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1 — COVER -->
+<div class="slide s1">
+  <div class="slide-header">
+    <svg width="200" height="46" viewBox="0 0 420 98" fill="none">
+      <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="white" letter-spacing="-1">SOCOVAL</text>
+      <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="#5CB3E8" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M0 84 Q52 74 105 84 Q157 94 210 84 Q262 74 315 84 Q367 94 420 84" stroke="#E8281A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    </svg>
+    <span class="counter counter-light">01 / 06</span>
+  </div>
+
+  <div class="slide-body" style="justify-content:flex-end;padding-bottom:140px;">
+    <div class="eyebrow" style="color:#5CB3E8;">WATER TREATMENT</div>
+    <div class="rule" style="background:#C0392B;"></div>
+    <h1 style="color:#fff;">Is your facility's water really<br><span style="color:#5CB3E8;">under control?</span></h1>
+    <p class="sub" style="color:rgba(255,255,255,0.6);">3 signs your pH is out of range — and the consequences for your business</p>
+  </div>
+
+  <div class="slide-footer">
+    <span></span>
+    <span class="handle-light">@socoval.piscinas</span>
+  </div>
+</div>
+
+<!-- SLIDE 2 — CONTEXT -->
+<div class="slide s2">
+  <div class="slide-header">
+    <svg width="200" height="46" viewBox="0 0 420 98" fill="none">
+      <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="#0B2F5E" letter-spacing="-1">SOCOVAL</text>
+      <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="#0B2F5E" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="#1B6FC8" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M0 84 Q52 74 105 84 Q157 94 210 84 Q262 74 315 84 Q367 94 420 84" stroke="#E8281A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    </svg>
+    <span class="counter counter-dark">02 / 06</span>
+  </div>
+
+  <div class="slide-body">
+    <div class="eyebrow" style="color:#1B6FC8;">pH MATTERS MORE THAN YOU THINK</div>
+    <div class="rule" style="background:#C0392B;"></div>
+    <div class="ph-box">
+      <span class="ph-num">7.2</span>
+      <span class="ph-arrow">→</span>
+      <span class="ph-num">7.6</span>
+      <span class="ph-label">ideal pH</span>
+    </div>
+    <h2 style="color:#0B2F5E;">Outside that range,<br>your facility fails<br>health regulations</h2>
+    <p class="body-text" style="color:#64748B;">Chlorine loses effectiveness and your facility's users will notice — with sanitary and legal consequences.</p>
+  </div>
+
+  <div class="slide-footer">
+    <span></span>
+    <span class="handle-dark">@socoval.piscinas</span>
+  </div>
+</div>
+
+<!-- SLIDE 3 — SIGNAL 01 -->
+<div class="slide s3">
+  <div class="slide-header">
+    <svg width="200" height="46" viewBox="0 0 420 98" fill="none">
+      <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="white" letter-spacing="-1">SOCOVAL</text>
+      <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="#5CB3E8" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M0 84 Q52 74 105 84 Q157 94 210 84 Q262 74 315 84 Q367 94 420 84" stroke="#E8281A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    </svg>
+    <span class="counter counter-light">03 / 06</span>
+  </div>
+
+  <div class="slide-body" style="z-index:1;">
+    <div class="eyebrow" style="color:#5CB3E8;">SIGNAL 01</div>
+    <div class="rule" style="background:#E8281A;"></div>
+    <h2 style="color:#fff;">Eyes sting after leaving the water</h2>
+    <p class="body-text" style="color:rgba(255,255,255,0.7);">The pH is too low. The water turns acidic and aggressive for skin and eyes. It's not the chlorine — it's the pH.</p>
+  </div>
+
+  <span class="big-num" style="color:rgba(255,255,255,0.04);">01</span>
+
+  <div class="slide-footer">
+    <span class="footer-label" style="color:rgba(255,255,255,0.28);">pH too low</span>
+    <span class="handle-light">@socoval.piscinas</span>
+  </div>
+</div>
+
+<!-- SLIDE 4 — SIGNAL 02 -->
+<div class="slide s4">
+  <div class="slide-header">
+    <svg width="200" height="46" viewBox="0 0 420 98" fill="none">
+      <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="white" letter-spacing="-1">SOCOVAL</text>
+      <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="rgba(255,255,255,0.5)" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M0 84 Q52 74 105 84 Q157 94 210 84 Q262 74 315 84 Q367 94 420 84" stroke="#E8281A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    </svg>
+    <span class="counter counter-light">04 / 06</span>
+  </div>
+
+  <div class="slide-body" style="z-index:1;">
+    <div class="eyebrow" style="color:rgba(255,255,255,0.6);">SIGNAL 02</div>
+    <div class="rule" style="background:#fff;"></div>
+    <h2 style="color:#fff;">The water smells strongly of chlorine</h2>
+    <p class="body-text" style="color:rgba(255,255,255,0.8);">The stronger the smell, the worse the state. That intense odour means the chlorine isn't working — the pH is blocking it.</p>
+  </div>
+
+  <span class="big-num" style="color:rgba(255,255,255,0.07);">02</span>
+
+  <div class="slide-footer">
+    <span class="footer-label" style="color:rgba(255,255,255,0.35);">pH out of range</span>
+    <span class="handle-light">@socoval.piscinas</span>
+  </div>
+</div>
+
+<!-- SLIDE 5 — SIGNAL 03 -->
+<div class="slide s5">
+  <div class="slide-header">
+    <svg width="200" height="46" viewBox="0 0 420 98" fill="none">
+      <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="#0B2F5E" letter-spacing="-1">SOCOVAL</text>
+      <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="#0B2F5E" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="#1B6FC8" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M0 84 Q52 74 105 84 Q157 94 210 84 Q262 74 315 84 Q367 94 420 84" stroke="#E8281A" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    </svg>
+    <span class="counter counter-dark">05 / 06</span>
+  </div>
+
+  <div class="slide-body" style="z-index:1;">
+    <div class="eyebrow" style="color:#C0392B;">SIGNAL 03</div>
+    <div class="rule" style="background:#1B6FC8;"></div>
+    <h2 style="color:#0B2F5E;">The water is cloudy even after treatment</h2>
+    <p class="body-text" style="color:#64748B;">With high pH, chlorine loses up to 90% of its effectiveness. The pool turns cloudy even after you've treated it.</p>
+  </div>
+
+  <span class="big-num" style="color:rgba(11,47,94,0.04);">03</span>
+
+  <div class="slide-footer">
+    <span class="footer-label" style="color:rgba(11,47,94,0.28);">pH too high</span>
+    <span class="handle-dark">@socoval.piscinas</span>
+  </div>
+</div>
+
+<!-- SLIDE 6 — CTA -->
+<div class="slide s6">
+  <div class="slide-header" style="z-index:2;">
+    <span></span>
+    <span class="counter" style="color:rgba(255,255,255,0.3);">06 / 06</span>
+  </div>
+
+  <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 90px;">
+    <svg width="260" height="58" viewBox="0 0 420 98" fill="none" style="margin-bottom:72px;">
+      <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="white" letter-spacing="-1">SOCOVAL</text>
+      <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="rgba(255,255,255,0.5)" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <path d="M0 84 Q52 74 105 84 Q157 94 210 84 Q262 74 315 84 Q367 94 420 84" stroke="rgba(255,255,255,0.4)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    </svg>
+    <p class="cta-title">When was the last technical inspection of your facility?</p>
+    <p class="cta-sub">Technical diagnosis for communities, hotels and sports facilities.</p>
+    <div class="cta-btn">Request diagnosis</div>
+    <span class="cta-handle">@socoval.piscinas · Valencia</span>
+  </div>
+</div>
+
+</body>
+</html>
