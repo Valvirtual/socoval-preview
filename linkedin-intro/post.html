@@ -2,10 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #1a1a1a; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: 'Inter', sans-serif; }
+  body { background: #1a1a1a; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: 'Inter', sans-serif; padding: 20px; }
+  .scale-wrap { transform-origin: top center; }
 
   .slide {
     width: 1200px;
@@ -221,7 +223,7 @@
 </head>
 <body>
 
-<div class="slide">
+<div class="scale-wrap" id="scaleWrap"><div class="slide">
   <div class="red-line"></div>
 
   <!-- ESQUERDA -->
@@ -288,7 +290,23 @@
   </div>
 
   <div class="handle">linkedin.com/company/socoval</div>
-</div>
+</div></div>
+
+<script>
+  function scalePost() {
+    const wrap = document.getElementById('scaleWrap');
+    const slide = wrap.querySelector('.slide');
+    const W = slide.offsetWidth;
+    const vw = window.innerWidth - 40;
+    const scale = vw < W ? vw / W : 1;
+    wrap.style.transform = `scale(${scale})`;
+    wrap.style.width = W + 'px';
+    wrap.style.height = (slide.offsetHeight * scale) + 'px';
+    document.body.style.minHeight = (slide.offsetHeight * scale + 40) + 'px';
+  }
+  window.addEventListener('load', scalePost);
+  window.addEventListener('resize', scalePost);
+</script>
 
 </body>
 </html>
