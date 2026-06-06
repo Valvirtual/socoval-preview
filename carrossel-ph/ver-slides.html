@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Socoval — Carrossel pH Instagram</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; padding: 32px 20px; }
+
+  .header { max-width: 960px; margin: 0 auto 28px; }
+  h1 { color: #fff; font-size: 16px; font-weight: 600; margin-bottom: 4px; letter-spacing: 0.03em; }
+  p  { color: #666; font-size: 13px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  }
+
+  .slide-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .slide-wrap img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: block;
+  }
+  .slide-wrap img:hover { transform: scale(1.02); box-shadow: 0 8px 32px rgba(0,0,0,0.7); }
+
+  .slide-num {
+    color: #444;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+  .lightbox.open { display: flex; }
+
+  .lightbox img {
+    max-height: 80vh;
+    max-width: 100%;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+
+  .lightbox-nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .lightbox-nav button {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .lightbox-nav button:hover,
+  .lightbox-nav button:active { background: rgba(255,255,255,0.22); }
+
+  .lightbox-close {
+    position: absolute;
+    top: 20px; right: 24px;
+    color: rgba(255,255,255,0.5);
+    font-size: 26px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 8px;
+  }
+  .lightbox-close:hover { color: white; }
+
+  .lightbox-counter {
+    color: rgba(255,255,255,0.35);
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    min-width: 48px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Socoval — Carrossel Instagram</h1>
+  <p>3 señales de que el pH está fuera de rango · 6 slides · Toca para ampliar</p>
+</div>
+
+<div class="grid" id="grid">
+  <div class="slide-wrap"><img src="instagram/slide-01.png" onclick="open_lb(0)" alt="Slide 1"><span class="slide-num">01 · Capa</span></div>
+  <div class="slide-wrap"><img src="instagram/slide-02.png" onclick="open_lb(1)" alt="Slide 2"><span class="slide-num">02 · Contexto</span></div>
+  <div class="slide-wrap"><img src="instagram/slide-03.png" onclick="open_lb(2)" alt="Slide 3"><span class="slide-num">03 · Señal 01</span></div>
+  <div class="slide-wrap"><img src="instagram/slide-04.png" onclick="open_lb(3)" alt="Slide 4"><span class="slide-num">04 · Señal 02</span></div>
+  <div class="slide-wrap"><img src="instagram/slide-05.png" onclick="open_lb(4)" alt="Slide 5"><span class="slide-num">05 · Señal 03</span></div>
+  <div class="slide-wrap"><img src="instagram/slide-06.png" onclick="open_lb(5)" alt="Slide 6"><span class="slide-num">06 · CTA</span></div>
+</div>
+
+<div class="lightbox" id="lb">
+  <span class="lightbox-close" onclick="close_lb()">✕</span>
+  <img id="lb-img" src="" alt="">
+  <div class="lightbox-nav">
+    <button onclick="nav(-1)">←</button>
+    <span class="lightbox-counter" id="lb-counter">1 / 6</span>
+    <button onclick="nav(1)">→</button>
+  </div>
+</div>
+
+<script>
+  const slides = [
+    'instagram/slide-01.png','instagram/slide-02.png','instagram/slide-03.png',
+    'instagram/slide-04.png','instagram/slide-05.png','instagram/slide-06.png',
+  ];
+  let current = 0;
+
+  function open_lb(i) { current = i; document.getElementById('lb').classList.add('open'); update(); }
+  function close_lb() { document.getElementById('lb').classList.remove('open'); }
+  function nav(dir) { current = (current + dir + slides.length) % slides.length; update(); }
+  function update() {
+    document.getElementById('lb-img').src = slides[current];
+    document.getElementById('lb-counter').textContent = `${current + 1} / ${slides.length}`;
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape')     close_lb();
+    if (e.key === 'ArrowRight') nav(1);
+    if (e.key === 'ArrowLeft')  nav(-1);
+  });
+
+  // swipe support mobile
+  let startX = 0;
+  document.getElementById('lb').addEventListener('touchstart', e => startX = e.touches[0].clientX);
+  document.getElementById('lb').addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 50) nav(dx < 0 ? 1 : -1);
+  });
+</script>
+
+</body>
+</html>
