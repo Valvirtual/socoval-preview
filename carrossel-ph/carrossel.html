@@ -15,169 +15,118 @@
     flex-shrink: 0;
   }
 
-  /* ─── LOGO SVG INLINE ─── */
-  .logo-white { display: block; }
-  .logo-dark  { display: block; }
-
-  /* ─── HEADER (logo + counter) ─── */
+  /* ─── HEADER ─── */
   .slide-header {
     position: absolute;
-    top: 60px; left: 70px; right: 70px;
+    top: 70px; left: 80px; right: 80px;
     display: flex; align-items: center; justify-content: space-between;
     z-index: 10;
   }
   .counter {
-    font-size: 15px; font-weight: 600; letter-spacing: 0.18em;
+    font-size: 28px; font-weight: 600; letter-spacing: 0.14em;
     text-transform: uppercase;
   }
-  .counter-light { color: rgba(255,255,255,0.45); }
-  .counter-dark  { color: rgba(11,47,94,0.35); }
+  .counter-light { color: rgba(255,255,255,0.4); }
+  .counter-dark  { color: rgba(11,47,94,0.3); }
 
-  /* ─── FOOTER (@handle) ─── */
+  /* ─── FOOTER ─── */
   .slide-footer {
     position: absolute;
-    bottom: 56px; left: 70px; right: 70px;
+    bottom: 70px; left: 80px; right: 80px;
     display: flex; align-items: center; justify-content: space-between;
     z-index: 10;
   }
-  .handle-light { font-size: 16px; font-weight: 600; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); }
-  .handle-dark  { font-size: 16px; font-weight: 600; letter-spacing: 0.1em; color: rgba(11,47,94,0.4); }
+  .handle-light { font-size: 28px; font-weight: 600; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); }
+  .handle-dark  { font-size: 28px; font-weight: 600; letter-spacing: 0.08em; color: rgba(11,47,94,0.35); }
+  .footer-label { font-size: 24px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
 
-  /* ─── CONTEÚDO CENTRAL ─── */
+  /* ─── BODY ─── */
   .slide-body {
     position: absolute;
-    top: 160px; bottom: 120px; left: 70px; right: 70px;
+    top: 190px; bottom: 150px; left: 80px; right: 80px;
     display: flex; flex-direction: column; justify-content: center;
   }
 
   .eyebrow {
-    font-size: 13px; font-weight: 800; letter-spacing: 0.28em;
-    text-transform: uppercase; margin-bottom: 28px;
+    font-size: 28px; font-weight: 800; letter-spacing: 0.24em;
+    text-transform: uppercase; margin-bottom: 36px;
   }
   .rule {
-    width: 64px; height: 4px; border-radius: 2px; margin-bottom: 32px;
+    width: 80px; height: 6px; border-radius: 3px; margin-bottom: 48px;
   }
   h1 {
-    font-size: 88px; font-weight: 900; line-height: 0.97;
-    letter-spacing: -0.04em; margin-bottom: 28px;
+    font-size: 128px; font-weight: 900; line-height: 0.96;
+    letter-spacing: -0.04em; margin-bottom: 40px;
   }
   h2 {
-    font-size: 66px; font-weight: 800; line-height: 1.04;
-    letter-spacing: -0.035em; margin-bottom: 28px;
+    font-size: 104px; font-weight: 800; line-height: 1.02;
+    letter-spacing: -0.035em; margin-bottom: 40px;
   }
   .sub {
-    font-size: 26px; font-weight: 500; line-height: 1.45;
-    letter-spacing: -0.01em; max-width: 800px;
+    font-size: 46px; font-weight: 500; line-height: 1.4;
+    letter-spacing: -0.01em;
   }
   .body-text {
-    font-size: 26px; font-weight: 500; line-height: 1.55;
-    letter-spacing: -0.01em; max-width: 820px;
+    font-size: 46px; font-weight: 500; line-height: 1.45;
+    letter-spacing: -0.01em;
   }
 
-  /* número gigante */
+  /* número decorativo */
   .big-num {
-    font-size: 340px; font-weight: 900; line-height: 1;
+    font-size: 420px; font-weight: 900; line-height: 1;
     letter-spacing: -0.06em;
-    position: absolute; right: -10px; bottom: -40px;
+    position: absolute; right: -20px; bottom: -60px;
     z-index: 0; pointer-events: none;
   }
 
-  /* ══════════════════════════════
-     SLIDE 1 — CAPA (navy dark)
-  ══════════════════════════════ */
+  /* ══ SLIDE 1 — CAPA ══ */
   .s1 { background: #071E3D; }
-  .s1 .eyebrow { color: #5CB3E8; }
-  .s1 h1 { color: #FFFFFF; }
-  .s1 .sub { color: rgba(255,255,255,0.65); }
-  .s1 .rule { background: #C0392B; }
-  /* linha decorativa diagonal no canto */
   .s1::after {
     content: '';
     position: absolute; bottom: 0; right: 0;
-    width: 480px; height: 480px;
+    width: 560px; height: 560px;
     background: radial-gradient(circle at 80% 80%, rgba(27,111,200,0.18), transparent 70%);
     z-index: 0;
   }
 
-  /* ══════════════════════════════
-     SLIDE 2 — CONTEXTO (claro)
-  ══════════════════════════════ */
+  /* ══ SLIDE 2 — CONTEXTO ══ */
   .s2 { background: #F4F7FB; }
-  .s2 .eyebrow { color: #1B6FC8; }
-  .s2 h2 { color: #0B2F5E; }
-  .s2 .body-text { color: #64748B; }
-  .s2 .rule { background: #C0392B; }
-
-  /* destaque numérico */
   .s2 .ph-box {
-    display: inline-flex; align-items: baseline; gap: 12px;
-    background: #0B2F5E; border-radius: 20px;
-    padding: 18px 36px; margin-bottom: 36px;
+    display: inline-flex; align-items: baseline; gap: 20px;
+    background: #0B2F5E; border-radius: 24px;
+    padding: 28px 52px; margin-bottom: 56px;
   }
-  .s2 .ph-num { font-size: 72px; font-weight: 900; color: #5CB3E8; letter-spacing: -0.04em; line-height: 1; }
-  .s2 .ph-label { font-size: 18px; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 0.12em; text-transform: uppercase; }
+  .s2 .ph-num   { font-size: 120px; font-weight: 900; color: #5CB3E8; letter-spacing: -0.04em; line-height: 1; }
+  .s2 .ph-arrow { font-size: 40px; font-weight: 700; color: rgba(255,255,255,0.4); }
+  .s2 .ph-label { font-size: 28px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; margin-left: 12px; }
 
-  /* ══════════════════════════════
-     SLIDE 3 — SEÑAL 01 (navy)
-  ══════════════════════════════ */
+  /* ══ SLIDE 3/4/5 — SEÑALES ══ */
   .s3 { background: #0B2F5E; overflow: hidden; }
-  .s3 .eyebrow { color: #5CB3E8; }
-  .s3 h2 { color: #FFFFFF; }
-  .s3 .body-text { color: rgba(255,255,255,0.7); }
-  .s3 .rule { background: #E8281A; }
-  .s3 .big-num { color: rgba(255,255,255,0.05); }
-
-  /* ══════════════════════════════
-     SLIDE 4 — SEÑAL 02 (azul)
-  ══════════════════════════════ */
   .s4 { background: #1B6FC8; overflow: hidden; }
-  .s4 .eyebrow { color: rgba(255,255,255,0.7); }
-  .s4 h2 { color: #FFFFFF; }
-  .s4 .body-text { color: rgba(255,255,255,0.8); }
-  .s4 .rule { background: #FFFFFF; }
-  .s4 .big-num { color: rgba(255,255,255,0.08); }
-
-  /* ══════════════════════════════
-     SLIDE 5 — SEÑAL 03 (claro)
-  ══════════════════════════════ */
   .s5 { background: #FFFFFF; overflow: hidden; }
-  .s5 .eyebrow { color: #C0392B; }
-  .s5 h2 { color: #0B2F5E; }
-  .s5 .body-text { color: #64748B; }
-  .s5 .rule { background: #1B6FC8; }
-  .s5 .big-num { color: rgba(11,47,94,0.05); }
 
-  /* ══════════════════════════════
-     SLIDE 6 — CTA (vermelho)
-  ══════════════════════════════ */
+  /* ══ SLIDE 6 — CTA ══ */
   .s6 { background: #C0392B; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
-  .s6 .cta-logo { margin-bottom: 64px; }
-  .s6 .cta-title { font-size: 62px; font-weight: 900; color: #FFFFFF; line-height: 1.05; letter-spacing: -0.035em; max-width: 820px; margin-bottom: 28px; }
-  .s6 .cta-sub { font-size: 26px; font-weight: 500; color: rgba(255,255,255,0.8); margin-bottom: 56px; }
-  .s6 .cta-btn { background: #FFFFFF; color: #C0392B; font-size: 18px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 22px 52px; border-radius: 50px; margin-bottom: 56px; }
-  .s6 .cta-handle { font-size: 16px; font-weight: 600; letter-spacing: 0.14em; color: rgba(255,255,255,0.5); text-transform: uppercase; }
   .s6::before {
-    content: '';
-    position: absolute; top: -120px; right: -120px;
-    width: 480px; height: 480px;
-    background: rgba(255,255,255,0.06); border-radius: 50%;
+    content: ''; position: absolute; top: -140px; right: -140px;
+    width: 560px; height: 560px; background: rgba(255,255,255,0.06); border-radius: 50%;
   }
   .s6::after {
-    content: '';
-    position: absolute; bottom: -80px; left: -80px;
-    width: 320px; height: 320px;
-    background: rgba(255,255,255,0.06); border-radius: 50%;
+    content: ''; position: absolute; bottom: -100px; left: -100px;
+    width: 400px; height: 400px; background: rgba(255,255,255,0.06); border-radius: 50%;
   }
+  .cta-title  { font-size: 96px; font-weight: 900; color: #fff; line-height: 1.04; letter-spacing: -0.035em; max-width: 860px; margin-bottom: 40px; }
+  .cta-sub    { font-size: 44px; font-weight: 500; color: rgba(255,255,255,0.8); margin-bottom: 72px; max-width: 800px; }
+  .cta-btn    { background: #fff; color: #C0392B; font-size: 32px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 32px 72px; border-radius: 60px; margin-bottom: 72px; }
+  .cta-handle { font-size: 28px; font-weight: 600; letter-spacing: 0.12em; color: rgba(255,255,255,0.45); text-transform: uppercase; }
 </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════
-     SLIDE 1 — CAPA
-══════════════════════════════════════ -->
+<!-- SLIDE 1 — CAPA -->
 <div class="slide s1">
   <div class="slide-header">
-    <svg width="160" height="36" viewBox="0 0 420 98" fill="none">
+    <svg width="200" height="46" viewBox="0 0 420 98" fill="none">
       <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="white" letter-spacing="-1">SOCOVAL</text>
       <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
       <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="#5CB3E8" stroke-width="3" stroke-linecap="round" fill="none"/>
@@ -186,11 +135,11 @@
     <span class="counter counter-light">01 / 06</span>
   </div>
 
-  <div class="slide-body" style="justify-content: flex-end; padding-bottom: 120px;">
-    <div class="eyebrow s1" style="color:#5CB3E8; font-size:13px; font-weight:800; letter-spacing:0.28em; text-transform:uppercase; margin-bottom:28px;">TRATAMIENTO DEL AGUA</div>
-    <div class="rule" style="width:64px;height:4px;border-radius:2px;background:#C0392B;margin-bottom:36px;"></div>
-    <h1 style="color:#fff;font-size:82px;font-weight:900;line-height:0.97;letter-spacing:-0.04em;margin-bottom:28px;">¿El agua de su instalación está<br><span style="color:#5CB3E8;">bajo control?</span></h1>
-    <p class="sub" style="color:rgba(255,255,255,0.6);font-size:24px;">3 señales de que el pH está fuera de rango — y sus consecuencias para su negocio</p>
+  <div class="slide-body" style="justify-content:flex-end;padding-bottom:140px;">
+    <div class="eyebrow" style="color:#5CB3E8;">TRATAMIENTO DEL AGUA</div>
+    <div class="rule" style="background:#C0392B;"></div>
+    <h1 style="color:#fff;">¿El agua de su instalación está<br><span style="color:#5CB3E8;">bajo control?</span></h1>
+    <p class="sub" style="color:rgba(255,255,255,0.6);">3 señales de que el pH está fuera de rango — y sus consecuencias para su negocio</p>
   </div>
 
   <div class="slide-footer">
@@ -199,12 +148,10 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     SLIDE 2 — CONTEXTO
-══════════════════════════════════════ -->
+<!-- SLIDE 2 — CONTEXTO -->
 <div class="slide s2">
   <div class="slide-header">
-    <svg width="160" height="36" viewBox="0 0 420 98" fill="none">
+    <svg width="200" height="46" viewBox="0 0 420 98" fill="none">
       <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="#0B2F5E" letter-spacing="-1">SOCOVAL</text>
       <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="#0B2F5E" stroke-width="3.5" stroke-linecap="round" fill="none"/>
       <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="#1B6FC8" stroke-width="3" stroke-linecap="round" fill="none"/>
@@ -214,18 +161,16 @@
   </div>
 
   <div class="slide-body">
-    <div style="font-size:13px;font-weight:800;letter-spacing:0.28em;text-transform:uppercase;color:#1B6FC8;margin-bottom:24px;">EL pH IMPORTA MÁS DE LO QUE CREES</div>
-    <div style="width:64px;height:4px;border-radius:2px;background:#C0392B;margin-bottom:48px;"></div>
-
-    <div class="ph-box" style="display:inline-flex;align-items:baseline;gap:12px;background:#0B2F5E;border-radius:20px;padding:18px 36px;margin-bottom:48px;">
-      <span style="font-size:72px;font-weight:900;color:#5CB3E8;letter-spacing:-0.04em;line-height:1;">7.2</span>
-      <span style="font-size:24px;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:0.08em;">→</span>
-      <span style="font-size:72px;font-weight:900;color:#5CB3E8;letter-spacing:-0.04em;line-height:1;">7.6</span>
-      <span style="font-size:16px;font-weight:700;color:rgba(255,255,255,0.5);letter-spacing:0.1em;text-transform:uppercase;margin-left:8px;">pH ideal</span>
+    <div class="eyebrow" style="color:#1B6FC8;">EL pH IMPORTA MÁS DE LO QUE CREES</div>
+    <div class="rule" style="background:#C0392B;"></div>
+    <div class="ph-box">
+      <span class="ph-num">7.2</span>
+      <span class="ph-arrow">→</span>
+      <span class="ph-num">7.6</span>
+      <span class="ph-label">pH ideal</span>
     </div>
-
-    <h2 style="color:#0B2F5E;font-size:60px;font-weight:800;line-height:1.05;letter-spacing:-0.035em;margin-bottom:28px;">Fuera de ese rango,<br>su instalación incumple normativa</h2>
-    <p class="body-text" style="color:#64748B;font-size:24px;">El cloro pierde eficacia, el agua deja de estar en equilibrio y los usuarios de su instalación lo van a notar — con consecuencias sanitarias y legales.</p>
+    <h2 style="color:#0B2F5E;">Fuera de ese rango,<br>su instalación<br>incumple normativa</h2>
+    <p class="body-text" style="color:#64748B;">El cloro pierde eficacia y los usuarios de su instalación lo van a notar — con consecuencias sanitarias y legales.</p>
   </div>
 
   <div class="slide-footer">
@@ -234,12 +179,10 @@
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     SLIDE 3 — SEÑAL 01
-══════════════════════════════════════ -->
+<!-- SLIDE 3 — SEÑAL 01 -->
 <div class="slide s3">
   <div class="slide-header">
-    <svg width="160" height="36" viewBox="0 0 420 98" fill="none">
+    <svg width="200" height="46" viewBox="0 0 420 98" fill="none">
       <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="white" letter-spacing="-1">SOCOVAL</text>
       <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
       <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="#5CB3E8" stroke-width="3" stroke-linecap="round" fill="none"/>
@@ -249,26 +192,24 @@
   </div>
 
   <div class="slide-body" style="z-index:1;">
-    <div style="font-size:13px;font-weight:800;letter-spacing:0.28em;text-transform:uppercase;color:#5CB3E8;margin-bottom:24px;">SEÑAL 01</div>
-    <div style="width:64px;height:4px;border-radius:2px;background:#E8281A;margin-bottom:48px;"></div>
-    <h2 style="color:#fff;font-size:72px;font-weight:900;line-height:1.02;letter-spacing:-0.035em;margin-bottom:36px;">Los ojos pican<br>al salir del agua</h2>
-    <p class="body-text" style="color:rgba(255,255,255,0.7);font-size:24px;max-width:760px;">El pH está demasiado bajo. El agua se vuelve ácida y agresiva para la piel y los ojos. No es el cloro — es el pH.</p>
+    <div class="eyebrow" style="color:#5CB3E8;">SEÑAL 01</div>
+    <div class="rule" style="background:#E8281A;"></div>
+    <h2 style="color:#fff;">Los ojos pican<br>al salir del agua</h2>
+    <p class="body-text" style="color:rgba(255,255,255,0.7);">El pH está demasiado bajo. El agua se vuelve ácida y agresiva para la piel y los ojos. No es el cloro — es el pH.</p>
   </div>
 
-  <span class="big-num" style="color:rgba(255,255,255,0.04);font-size:380px;font-weight:900;position:absolute;right:-20px;bottom:-60px;letter-spacing:-0.06em;line-height:1;z-index:0;">01</span>
+  <span class="big-num" style="color:rgba(255,255,255,0.04);">01</span>
 
   <div class="slide-footer">
-    <span style="font-size:14px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);">pH demasiado bajo</span>
+    <span class="footer-label" style="color:rgba(255,255,255,0.28);">pH demasiado bajo</span>
     <span class="handle-light">@socoval.piscinas</span>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     SLIDE 4 — SEÑAL 02
-══════════════════════════════════════ -->
+<!-- SLIDE 4 — SEÑAL 02 -->
 <div class="slide s4">
   <div class="slide-header">
-    <svg width="160" height="36" viewBox="0 0 420 98" fill="none">
+    <svg width="200" height="46" viewBox="0 0 420 98" fill="none">
       <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="white" letter-spacing="-1">SOCOVAL</text>
       <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
       <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="rgba(255,255,255,0.5)" stroke-width="3" stroke-linecap="round" fill="none"/>
@@ -278,26 +219,24 @@
   </div>
 
   <div class="slide-body" style="z-index:1;">
-    <div style="font-size:13px;font-weight:800;letter-spacing:0.28em;text-transform:uppercase;color:rgba(255,255,255,0.65);margin-bottom:24px;">SEÑAL 02</div>
-    <div style="width:64px;height:4px;border-radius:2px;background:#fff;margin-bottom:48px;"></div>
-    <h2 style="color:#fff;font-size:72px;font-weight:900;line-height:1.02;letter-spacing:-0.035em;margin-bottom:36px;">El agua huele<br>fuerte a cloro</h2>
-    <p class="body-text" style="color:rgba(255,255,255,0.8);font-size:24px;max-width:760px;">Cuanto más huele, peor está. Ese olor intenso es señal de que el cloro no funciona bien — el pH lo está bloqueando.</p>
+    <div class="eyebrow" style="color:rgba(255,255,255,0.6);">SEÑAL 02</div>
+    <div class="rule" style="background:#fff;"></div>
+    <h2 style="color:#fff;">El agua huele<br>fuerte a cloro</h2>
+    <p class="body-text" style="color:rgba(255,255,255,0.8);">Cuanto más huele, peor está. Ese olor intenso es señal de que el cloro no funciona bien — el pH lo está bloqueando.</p>
   </div>
 
-  <span style="color:rgba(255,255,255,0.06);font-size:380px;font-weight:900;position:absolute;right:-20px;bottom:-60px;letter-spacing:-0.06em;line-height:1;z-index:0;font-family:Inter,sans-serif;">02</span>
+  <span class="big-num" style="color:rgba(255,255,255,0.07);">02</span>
 
   <div class="slide-footer">
-    <span style="font-size:14px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);">pH fuera de rango</span>
+    <span class="footer-label" style="color:rgba(255,255,255,0.35);">pH fuera de rango</span>
     <span class="handle-light">@socoval.piscinas</span>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     SLIDE 5 — SEÑAL 03
-══════════════════════════════════════ -->
+<!-- SLIDE 5 — SEÑAL 03 -->
 <div class="slide s5">
   <div class="slide-header">
-    <svg width="160" height="36" viewBox="0 0 420 98" fill="none">
+    <svg width="200" height="46" viewBox="0 0 420 98" fill="none">
       <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="#0B2F5E" letter-spacing="-1">SOCOVAL</text>
       <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="#0B2F5E" stroke-width="3.5" stroke-linecap="round" fill="none"/>
       <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="#1B6FC8" stroke-width="3" stroke-linecap="round" fill="none"/>
@@ -307,37 +246,34 @@
   </div>
 
   <div class="slide-body" style="z-index:1;">
-    <div style="font-size:13px;font-weight:800;letter-spacing:0.28em;text-transform:uppercase;color:#C0392B;margin-bottom:24px;">SEÑAL 03</div>
-    <div style="width:64px;height:4px;border-radius:2px;background:#1B6FC8;margin-bottom:48px;"></div>
-    <h2 style="color:#0B2F5E;font-size:68px;font-weight:900;line-height:1.02;letter-spacing:-0.035em;margin-bottom:36px;">El agua está turbia<br>aunque hayas<br>echado producto</h2>
-    <p class="body-text" style="color:#64748B;font-size:24px;max-width:760px;">Con el pH alto, el cloro pierde hasta el 90% de su eficacia. La piscina se enturbia aunque la hayas tratado.</p>
+    <div class="eyebrow" style="color:#C0392B;">SEÑAL 03</div>
+    <div class="rule" style="background:#1B6FC8;"></div>
+    <h2 style="color:#0B2F5E;">El agua está turbia<br>aunque hayas<br>echado producto</h2>
+    <p class="body-text" style="color:#64748B;">Con el pH alto, el cloro pierde hasta el 90% de su eficacia. La piscina se enturbia aunque la hayas tratado.</p>
   </div>
 
-  <span style="color:rgba(11,47,94,0.04);font-size:380px;font-weight:900;position:absolute;right:-20px;bottom:-60px;letter-spacing:-0.06em;line-height:1;z-index:0;font-family:Inter,sans-serif;">03</span>
+  <span class="big-num" style="color:rgba(11,47,94,0.04);">03</span>
 
   <div class="slide-footer">
-    <span style="font-size:14px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(11,47,94,0.3);">pH demasiado alto</span>
+    <span class="footer-label" style="color:rgba(11,47,94,0.28);">pH demasiado alto</span>
     <span class="handle-dark">@socoval.piscinas</span>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════
-     SLIDE 6 — CTA
-══════════════════════════════════════ -->
+<!-- SLIDE 6 — CTA -->
 <div class="slide s6">
   <div class="slide-header" style="z-index:2;">
     <span></span>
-    <span class="counter" style="color:rgba(255,255,255,0.35);font-size:15px;font-weight:600;letter-spacing:0.18em;">06 / 06</span>
+    <span class="counter" style="color:rgba(255,255,255,0.3);">06 / 06</span>
   </div>
 
-  <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 80px;">
-    <svg width="220" height="48" viewBox="0 0 420 98" fill="none" style="margin-bottom:64px;">
+  <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 90px;">
+    <svg width="260" height="58" viewBox="0 0 420 98" fill="none" style="margin-bottom:72px;">
       <text x="0" y="58" font-family="Inter,sans-serif" font-size="58" font-weight="800" fill="white" letter-spacing="-1">SOCOVAL</text>
       <path d="M0 68 Q52 58 105 68 Q157 78 210 68 Q262 58 315 68 Q367 78 420 68" stroke="white" stroke-width="3.5" stroke-linecap="round" fill="none"/>
       <path d="M0 76 Q52 66 105 76 Q157 86 210 76 Q262 66 315 76 Q367 86 420 76" stroke="rgba(255,255,255,0.5)" stroke-width="3" stroke-linecap="round" fill="none"/>
       <path d="M0 84 Q52 74 105 84 Q157 94 210 84 Q262 74 315 84 Q367 94 420 84" stroke="rgba(255,255,255,0.4)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
     </svg>
-
     <p class="cta-title">¿Cuándo fue la última revisión técnica de su instalación?</p>
     <p class="cta-sub">Diagnóstico para comunidades, hoteles e instalaciones deportivas.</p>
     <div class="cta-btn">Solicitar diagnóstico</div>
